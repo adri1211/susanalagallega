@@ -1,11 +1,7 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  // Para subir por FTP sin Node.js en el servidor
-  output: 'export',
-  trailingSlash: true,
   images: {
-    unoptimized: true, // Necesario en export estático
     remotePatterns: [
       { protocol: 'https', hostname: 'images.unsplash.com' },
       { protocol: 'https', hostname: '*.supabase.co' },
