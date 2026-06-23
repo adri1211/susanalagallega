@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 
 const NAV_LINKS = [
@@ -12,9 +13,15 @@ const NAV_LINKS = [
   { label: 'Contacto', href: '/contacto' },
 ];
 
+// Pages where navbar can start transparent (they have a full-screen hero)
+const HERO_PAGES = ['/'];
+
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  const hasHero = HERO_PAGES.includes(pathname);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -22,11 +29,14 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const solid = scrolled || menuOpen;
+  // Solid when: scrolled, menu open, or page doesn't have a hero
+  const solid = scrolled || menuOpen || !hasHero;
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${solid ? 'bg-white shadow-md' : 'bg-transparent'}`}
+      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
+        solid ? 'bg-white shadow-sm' : 'bg-transparent'
+      }`}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16">
@@ -37,18 +47,21 @@ export function Navbar() {
               alt="Susana La Gallega"
               width={120}
               height={40}
-              className="h-10 w-auto"
+              className={`h-10 w-auto transition-all ${solid ? '' : 'brightness-0 invert'}`}
               priority
+              unoptimized
             />
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-6">
+          <nav className="hidden md:flex items-center gap-5 lg:gap-7">
             {NAV_LINKS.map(link => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-semibold transition-colors hover:text-[#45b0e5] ${solid ? 'text-[#243b60]' : 'text-white drop-shadow'}`}
+                className={`text-sm font-semibold transition-colors hover:text-[#45b0e5] ${
+                  solid ? 'text-[#243b60]' : 'text-white drop-shadow'
+                } ${pathname === link.href ? 'text-[#45b0e5]' : ''}`}
               >
                 {link.label}
               </Link>
@@ -57,7 +70,7 @@ export function Navbar() {
 
           {/* Mobile toggle */}
           <button
-            className={`md:hidden p-2 rounded-lg ${solid ? 'text-[#243b60]' : 'text-white'}`}
+            className={`md:hidden p-2 rounded-lg transition-colors ${solid ? 'text-[#243b60]' : 'text-white'}`}
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Menú"
           >
@@ -67,13 +80,15 @@ export function Navbar() {
 
         {/* Mobile menu */}
         {menuOpen && (
-          <div className="md:hidden bg-white border-t border-gray-100 py-4 space-y-1">
+          <div className="md:hidden bg-white border-t border-gray-100 py-4 space-y-1 shadow-lg">
             {NAV_LINKS.map(link => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
-                className="block px-4 py-3 text-[#243b60] font-semibold text-sm rounded-lg hover:bg-[#C7E7F4] transition-colors"
+                className={`block px-4 py-3 font-semibold text-sm rounded-xl hover:bg-[#C7E7F4] transition-colors ${
+                  pathname === link.href ? 'text-[#45b0e5] bg-[#C7E7F4]' : 'text-[#243b60]'
+                }`}
               >
                 {link.label}
               </Link>

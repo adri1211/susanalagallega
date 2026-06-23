@@ -3,58 +3,63 @@
 import Link from 'next/link';
 
 const CATEGORIAS = [
-  { slug: 'marisqueria', label: 'Marisquería', emoji: '🦞', desc: 'Los mejores mariscos del Atlántico' },
-  { slug: 'pulperia', label: 'Pulpería', emoji: '🐙', desc: 'Pulpo estilo gallego, tradición pura' },
-  { slug: 'parrillada', label: 'Parrillada', emoji: '🥩', desc: 'Carnes a la brasa con carácter' },
-  { slug: 'taperia', label: 'Tapería', emoji: '🍺', desc: 'Raciones y cañas en buena compañía' },
-  { slug: 'tradicional', label: 'Tradicional', emoji: '🍲', desc: 'Cocina gallega de toda la vida' },
-  { slug: 'cocina-moderna', label: 'Cocina Moderna', emoji: '✨', desc: 'Creatividad con raíces gallegas' },
-  { slug: 'bar', label: 'Bar & Café', emoji: '☕', desc: 'Para un café o una copa tranquila' },
-  { slug: 'cafeteria', label: 'Cafetería', emoji: '🥐', desc: 'Buenos desayunos y meriendas' },
+  { slug: 'marisqueria', label: 'Marisquería', emoji: '🦞', color: '#1a4f7a' },
+  { slug: 'pulperia', label: 'Pulpería', emoji: '🐙', color: '#1a4f7a' },
+  { slug: 'parrillada', label: 'Parrillada', emoji: '🥩', color: '#1a4f7a' },
+  { slug: 'taperia', label: 'Tapería', emoji: '🍺', color: '#1a4f7a' },
+  { slug: 'tradicional', label: 'Tradicional', emoji: '🏠', color: '#1a4f7a' },
+  { slug: 'cocina-moderna', label: 'Cocina Moderna', emoji: '✨', color: '#1a4f7a' },
+  { slug: 'bar', label: 'Bar & Café', emoji: '☕', color: '#1a4f7a' },
+  { slug: 'cafeteria', label: 'Cafetería', emoji: '🥐', color: '#1a4f7a' },
 ];
 
 export function CategoriesSection() {
   return (
     <section className="py-16 px-4" style={{ background: '#F4F3E4' }}>
       <div className="max-w-6xl mx-auto">
-        {/* Encabezado */}
-        <div className="text-center mb-10">
-          <span className="section-label text-[#45b0e5]">¿Qué te apetece hoy?</span>
-          <h2 className="mt-2 text-3xl sm:text-4xl" style={{ fontFamily: 'Lilita One, cursive', color: '#243b60' }}>
-            Elige tu tipo de cocina
-          </h2>
-          <p className="mt-2 text-[#5a6a7a] text-sm max-w-xl mx-auto">
-            Desde un pulpo a feira hasta una marisquería de lujo, encuentra exactamente lo que buscas.
+        {/* Header */}
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-10 gap-4">
+          <div>
+            <p className="section-label text-[#45b0e5] mb-1">¿Qué te apetece hoy?</p>
+            <h2 className="text-3xl sm:text-4xl" style={{ fontFamily: 'Lilita One, cursive', color: '#243b60' }}>
+              Elige tu tipo de cocina
+            </h2>
+          </div>
+          <p className="text-[#5a6a7a] text-sm max-w-xs">
+            De la marisquería más fresca a la pulpería más auténtica — todo en un solo lugar.
           </p>
         </div>
 
-        {/* Grid de categorías */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-          {CATEGORIAS.map(cat => (
+        {/* Grid de categorías — estilo tile compacto */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          {CATEGORIAS.map((cat, i) => (
             <Link
               key={cat.slug}
               href={`/restaurantes?categoria=${cat.slug}`}
-              className="card-susana group p-5 flex flex-col items-center text-center gap-3 cursor-pointer"
+              className="group relative overflow-hidden rounded-2xl p-5 flex flex-col gap-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+              style={{
+                background: i % 2 === 0 ? '#243b60' : 'white',
+                border: i % 2 === 0 ? 'none' : '1.5px solid rgba(36,59,96,0.1)',
+              }}
             >
-              <div
-                className="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl group-hover:scale-110 transition-transform"
-                style={{ background: '#C7E7F4' }}
-              >
-                {cat.emoji}
-              </div>
+              <span className="text-3xl">{cat.emoji}</span>
               <div>
-                <div className="font-bold text-sm" style={{ color: '#243b60', fontFamily: 'Poppins, sans-serif' }}>
+                <p className={`font-bold text-sm leading-tight ${i % 2 === 0 ? 'text-white' : 'text-[#243b60]'}`}
+                  style={{ fontFamily: 'Lilita One, cursive' }}>
                   {cat.label}
-                </div>
-                <div className="text-xs text-[#5a6a7a] mt-0.5">{cat.desc}</div>
+                </p>
+              </div>
+              {/* Hover indicator */}
+              <div className={`absolute bottom-3 right-3 text-xs font-bold opacity-0 group-hover:opacity-100 transition-opacity ${i % 2 === 0 ? 'text-[#45b0e5]' : 'text-[#243b60]'}`}>
+                Ver →
               </div>
             </Link>
           ))}
         </div>
 
-        {/* CTA ver todos */}
+        {/* CTA */}
         <div className="text-center mt-8">
-          <Link href="/restaurantes" className="btn-primario">
+          <Link href="/restaurantes" className="btn-secundario">
             Ver todos los restaurantes →
           </Link>
         </div>

@@ -3,41 +3,23 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Search, ChevronDown } from 'lucide-react';
+import { Search, ChevronDown, Play } from 'lucide-react';
 
-const SLIDES = [
-  {
-    img: '/images/original_32874.png',
-    titulo: 'Descubre la Galicia\nmás auténtica',
-    subtitulo: 'Los mejores restaurantes, pulperías y marisquerías seleccionados por Susana',
-  },
-  {
-    img: '/images/original_32853.png',
-    titulo: 'Saboreando con\nSusana',
-    subtitulo: 'El programa de televisión que lleva la gastronomía gallega a toda España',
-  },
-  {
-    img: '/images/original_33082.png',
-    titulo: 'Dónde comer bien\nhoy mismo',
-    subtitulo: 'Recomendaciones honestas de quien más sabe de cocina gallega',
-  },
-];
-
-const FILTROS = [
-  { label: 'Marisquería', href: '/restaurantes?categoria=marisqueria' },
-  { label: 'Pulpería', href: '/restaurantes?categoria=pulperia' },
-  { label: 'Tradicional', href: '/restaurantes?categoria=tradicional' },
-  { label: 'Tapería', href: '/restaurantes?categoria=taperia' },
-  { label: 'Ferrol', href: '/restaurantes?localidad=ferrol' },
-  { label: 'A Coruña', href: '/restaurantes?localidad=a-coruna' },
-];
+const KEYWORDS = ['marisquería', 'pulpería', 'cocina gallega', 'sabores auténticos', 'Ferrol', 'A Coruña'];
 
 export function HeroSection() {
-  const [slide, setSlide] = useState(0);
   const [query, setQuery] = useState('');
+  const [kwIndex, setKwIndex] = useState(0);
+  const [fade, setFade] = useState(true);
 
   useEffect(() => {
-    const t = setInterval(() => setSlide(s => (s + 1) % SLIDES.length), 5000);
+    const t = setInterval(() => {
+      setFade(false);
+      setTimeout(() => {
+        setKwIndex(i => (i + 1) % KEYWORDS.length);
+        setFade(true);
+      }, 400);
+    }, 2500);
     return () => clearInterval(t);
   }, []);
 
@@ -47,115 +29,130 @@ export function HeroSection() {
   };
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
-      {/* Slides */}
-      {SLIDES.map((s, i) => (
-        <div
-          key={i}
-          className="absolute inset-0 transition-opacity duration-1000"
-          style={{ opacity: i === slide ? 1 : 0 }}
-        >
-          <Image
-            src={s.img}
-            alt={s.titulo}
-            fill
-            className="object-cover object-center"
-            priority={i === 0}
-          />
-        </div>
-      ))}
+    <section className="relative min-h-screen flex items-center overflow-hidden" style={{ background: '#243b60' }}>
+      {/* Fondo — imagen Susana */}
+      <div className="absolute inset-0">
+        <Image
+          src="/images/original_32874.png"
+          alt="Susana La Gallega"
+          fill
+          className="object-cover object-center opacity-30"
+          priority
+          unoptimized
+        />
+        {/* Gradiente fuerte izquierda para texto legible */}
+        <div className="absolute inset-0" style={{
+          background: 'linear-gradient(to right, rgba(36,59,96,0.98) 0%, rgba(36,59,96,0.85) 55%, rgba(36,59,96,0.3) 100%)'
+        }} />
+      </div>
 
-      {/* Overlay azul marino */}
-      <div
-        className="absolute inset-0"
-        style={{ background: 'linear-gradient(to bottom, rgba(36,59,96,0.5) 0%, rgba(36,59,96,0.3) 50%, rgba(36,59,96,0.8) 100%)' }}
-      />
+      {/* Patrón decorativo */}
+      <div className="absolute inset-0 patron-azulejo" />
 
-      {/* Contenido */}
-      <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto pt-20">
-        {/* Badge TV */}
-        <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm border border-white/25 rounded-full px-4 py-1.5 mb-6">
-          <span className="w-2 h-2 rounded-full bg-[#45b0e5] animate-pulse" />
-          <span className="text-xs font-semibold tracking-widest uppercase">TV Ferrol · Canal 33 Madrid · YouTube</span>
-        </div>
+      {/* Contenido principal */}
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 pt-20">
+        <div className="max-w-3xl">
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2.5 mb-8"
+            style={{ background: 'rgba(69,176,229,0.15)', border: '1px solid rgba(69,176,229,0.35)', borderRadius: '9999px', padding: '8px 18px' }}>
+            <span className="w-2 h-2 rounded-full bg-[#45b0e5] animate-pulse" />
+            <span className="text-[#45b0e5] text-xs font-bold uppercase tracking-widest">TV Ferrol · Canal 33 Madrid · YouTube</span>
+          </div>
 
-        {/* Título */}
-        <h1
-          className="text-4xl sm:text-5xl md:text-6xl mb-4 leading-tight"
-          style={{ fontFamily: 'Lilita One, cursive', whiteSpace: 'pre-line' }}
-        >
-          {SLIDES[slide].titulo}
-        </h1>
+          {/* Título */}
+          <h1 className="text-5xl sm:text-6xl md:text-7xl text-white leading-[1.05] mb-6"
+            style={{ fontFamily: 'Lilita One, cursive' }}>
+            La guía<br />
+            gastronómica<br />
+            <span style={{ color: '#45b0e5' }}>de Galicia</span>
+          </h1>
 
-        <p className="text-lg sm:text-xl text-white/90 mb-8 max-w-2xl mx-auto font-light">
-          {SLIDES[slide].subtitulo}
-        </p>
-
-        {/* Buscador */}
-        <form onSubmit={handleSearch} className="flex items-center gap-2 bg-white rounded-full p-2 max-w-xl mx-auto mb-6 shadow-xl">
-          <Search size={18} className="ml-3 text-[#243b60] flex-shrink-0" />
-          <input
-            type="text"
-            placeholder="Busca restaurante, ciudad, tipo de cocina..."
-            value={query}
-            onChange={e => setQuery(e.target.value)}
-            className="flex-1 bg-transparent text-[#243b60] placeholder-gray-400 text-sm outline-none px-2"
-          />
-          <button
-            type="submit"
-            className="bg-[#243b60] text-white rounded-full px-5 py-2 text-sm font-semibold hover:bg-[#2d4f82] transition-colors flex-shrink-0"
-          >
-            Buscar
-          </button>
-        </form>
-
-        {/* Filtros rápidos */}
-        <div className="flex flex-wrap justify-center gap-2 mb-10">
-          {FILTROS.map(f => (
-            <Link
-              key={f.href}
-              href={f.href}
-              className="bg-white/15 hover:bg-white/25 border border-white/30 text-white text-xs font-semibold px-4 py-1.5 rounded-full transition-all backdrop-blur-sm"
+          {/* Keyword rotativo */}
+          <p className="text-white/70 text-xl mb-10 font-light">
+            Encuentra tu{' '}
+            <span
+              className="font-semibold text-white transition-opacity duration-300"
+              style={{ opacity: fade ? 1 : 0 }}
             >
-              {f.label}
-            </Link>
-          ))}
-        </div>
+              {KEYWORDS[kwIndex]}
+            </span>
+            {' '}perfecta
+          </p>
 
-        {/* Stats */}
-        <div className="flex flex-wrap justify-center gap-8 sm:gap-14">
-          {[
-            { n: '+30', label: 'Restaurantes' },
-            { n: '2', label: 'Ciudades' },
-            { n: '3', label: 'Temporadas TV' },
-          ].map(st => (
-            <div key={st.label} className="text-center">
-              <div className="text-3xl font-bold text-[#45b0e5]" style={{ fontFamily: 'Lilita One, cursive' }}>{st.n}</div>
-              <div className="text-xs text-white/80 font-semibold uppercase tracking-wider">{st.label}</div>
-            </div>
-          ))}
+          {/* Buscador */}
+          <form onSubmit={handleSearch} className="flex items-center gap-2 bg-white rounded-2xl p-2 max-w-xl shadow-2xl mb-8">
+            <Search size={18} className="ml-3 flex-shrink-0" style={{ color: '#243b60' }} />
+            <input
+              type="text"
+              placeholder="Restaurante, ciudad, tipo de cocina..."
+              value={query}
+              onChange={e => setQuery(e.target.value)}
+              className="flex-1 bg-transparent text-sm outline-none px-2"
+              style={{ color: '#243b60' }}
+            />
+            <button type="submit"
+              className="flex-shrink-0 text-white rounded-xl px-5 py-2.5 text-sm font-bold transition-all hover:brightness-110"
+              style={{ background: '#243b60' }}>
+              Buscar
+            </button>
+          </form>
+
+          {/* Chips rápidos */}
+          <div className="flex flex-wrap gap-2 mb-12">
+            {[
+              { label: '🦞 Marisquería', href: '/restaurantes?categoria=marisqueria' },
+              { label: '🐙 Pulpería', href: '/restaurantes?categoria=pulperia' },
+              { label: '📍 Ferrol', href: '/restaurantes?localidad=ferrol' },
+              { label: '📍 A Coruña', href: '/restaurantes?localidad=a-coruna' },
+              { label: '📍 Cedeira', href: '/restaurantes?localidad=cedeira' },
+            ].map(c => (
+              <Link key={c.href} href={c.href}
+                className="text-white/90 text-xs font-semibold px-4 py-2 rounded-full transition-all hover:bg-white/25"
+                style={{ background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)' }}>
+                {c.label}
+              </Link>
+            ))}
+          </div>
+
+          {/* Stats + CTA TV */}
+          <div className="flex flex-wrap items-center gap-8">
+            {[
+              { n: '+30', label: 'Restaurantes' },
+              { n: '3', label: 'Temporadas en TV' },
+              { n: '100%', label: 'Recomendaciones reales' },
+            ].map(s => (
+              <div key={s.label}>
+                <div className="text-3xl font-bold" style={{ color: '#45b0e5', fontFamily: 'Lilita One, cursive' }}>{s.n}</div>
+                <div className="text-white/60 text-xs font-semibold uppercase tracking-wide">{s.label}</div>
+              </div>
+            ))}
+
+            <Link href="/saboreando-con-susana"
+              className="flex items-center gap-2 text-white text-sm font-bold px-5 py-3 rounded-full transition-all hover:bg-white/10"
+              style={{ background: 'rgba(69,176,229,0.2)', border: '1px solid rgba(69,176,229,0.4)' }}>
+              <Play size={14} fill="currentColor" />
+              Ver el programa
+            </Link>
+          </div>
         </div>
       </div>
 
-      {/* Indicadores slide */}
-      <div className="absolute bottom-20 flex gap-2 z-10">
-        {SLIDES.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setSlide(i)}
-            className="transition-all rounded-full"
-            style={{
-              width: i === slide ? '24px' : '8px',
-              height: '8px',
-              background: i === slide ? '#45b0e5' : 'rgba(255,255,255,0.5)',
-            }}
-          />
-        ))}
+      {/* Imagen Susana flotando a la derecha en desktop */}
+      <div className="absolute right-0 bottom-0 hidden lg:block w-[42%] h-full pointer-events-none">
+        <Image
+          src="/images/original_32874.png"
+          alt="Susana La Gallega"
+          fill
+          className="object-cover object-top"
+          style={{ maskImage: 'linear-gradient(to left, rgba(0,0,0,0.6) 0%, transparent 100%)', WebkitMaskImage: 'linear-gradient(to left, rgba(0,0,0,0.6) 0%, transparent 100%)' }}
+          priority
+          unoptimized
+        />
       </div>
 
       {/* Scroll cue */}
-      <div className="absolute bottom-6 z-10 animate-bounce">
-        <ChevronDown size={28} className="text-white/70" />
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+        <ChevronDown size={28} className="text-white/50" />
       </div>
     </section>
   );
