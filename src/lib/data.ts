@@ -83,12 +83,10 @@ export async function getRestaurantes(filtros: FiltrosRestaurante = {}): Promise
   const from = (pagina - 1) * porPagina;
   const to = from + porPagina - 1;
 
-  // Use admin client to bypass RLS — activo filter applied manually below
-  const client = createAdminClient();
-  let query = client
+  let query = supabase
     .from('restaurantes')
     .select(
-      'id,slug,nombre,descripcion_corta,categoria,localidad,provincia,imagen_principal,rango_precio,rating,total_reviews,etiquetas,destacado,activo',
+      'id,slug,nombre,descripcion_corta,categoria,localidad,provincia,imagen_principal,rango_precio,rating,total_reviews,etiquetas,destacado',
       { count: 'exact' }
     )
     .order('destacado', { ascending: false })
@@ -125,8 +123,7 @@ export async function getRestaurantes(filtros: FiltrosRestaurante = {}): Promise
 }
 
 export async function getRestauranteBySlug(slug: string): Promise<Restaurant | null> {
-  const client = createAdminClient();
-  const { data, error } = await client
+  const { data, error } = await supabase
     .from('restaurantes')
     .select('*, galeria(*)')
     .eq('slug', slug)
@@ -137,8 +134,7 @@ export async function getRestauranteBySlug(slug: string): Promise<Restaurant | n
 }
 
 export async function getDestacados(): Promise<RestaurantCard[]> {
-  const client = createAdminClient();
-  const { data } = await client
+  const { data } = await supabase
     .from('restaurantes')
     .select('id,slug,nombre,descripcion_corta,categoria,localidad,provincia,imagen_principal,rango_precio,rating,total_reviews,etiquetas,destacado')
     .eq('destacado', true)
@@ -167,8 +163,7 @@ export async function getRestaurantesSimilares(
   categoria: string,
   limit = 4
 ): Promise<RestaurantCard[]> {
-  const client = createAdminClient();
-  const { data } = await client
+  const { data } = await supabase
     .from('restaurantes')
     .select('id,slug,nombre,descripcion_corta,categoria,localidad,provincia,imagen_principal,rango_precio,rating,total_reviews,etiquetas,destacado')
     .eq('categoria', categoria)
