@@ -2,134 +2,85 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X, Search, MapPin } from 'lucide-react';
-import { cn } from '@/utils/cn';
+import Image from 'next/image';
+import { Menu, X } from 'lucide-react';
 
-const navLinks = [
-  { label: 'Restaurantes', href: '/restaurantes' },
-  { label: 'Categorías', href: '/categorias' },
-  { label: 'Mapa', href: '/mapa' },
-  { label: 'Rutas', href: '/rutas' },
+const NAV_LINKS = [
+  { label: 'Saboreando con Susana', href: '/saboreando-con-susana' },
+  { label: '¿Qué te apetece comer hoy?', href: '/restaurantes' },
+  { label: 'Colaboraciones', href: '/colaboraciones' },
+  { label: 'Contacto', href: '/contacto' },
 ];
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
-  const [open, setOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 60);
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
+
+  const solid = scrolled || menuOpen;
 
   return (
     <header
-      className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-500',
-        scrolled
-          ? 'bg-[#FAF7F0]/95 backdrop-blur-md shadow-sm border-b border-black/5'
-          : 'bg-transparent'
-      )}
+      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${solid ? 'bg-white shadow-md' : 'bg-transparent'}`}
     >
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 lg:h-20 flex items-center justify-between gap-6">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 group shrink-0">
-          <div
-            className={cn(
-              'w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold transition-colors',
-              scrolled ? 'bg-[#2D5016] text-white' : 'bg-white/20 text-white'
-            )}
-          >
-            S
-          </div>
-          <span
-            className={cn(
-              'font-semibold text-base tracking-tight transition-colors',
-              scrolled ? 'text-[#1A1A1A]' : 'text-white'
-            )}
-          >
-            Susana<span className="font-light"> la Gallega</span>
-          </span>
-        </Link>
-
-        {/* Desktop links */}
-        <div className="hidden lg:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={cn(
-                'text-sm font-medium transition-colors hover:opacity-70',
-                scrolled ? 'text-[#3D3D3D]' : 'text-white/90'
-              )}
-            >
-              {link.label}
-            </Link>
-          ))}
-        </div>
-
-        {/* Actions */}
-        <div className="hidden lg:flex items-center gap-3">
-          <Link
-            href="/restaurantes?busqueda="
-            className={cn(
-              'p-2 rounded-full transition-all hover:scale-110',
-              scrolled ? 'text-[#3D3D3D] hover:bg-black/5' : 'text-white hover:bg-white/15'
-            )}
-          >
-            <Search size={18} />
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="flex items-center justify-between h-16">
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-2 flex-shrink-0">
+            <Image
+              src="/images/original_32849.svg"
+              alt="Susana La Gallega"
+              width={120}
+              height={40}
+              className="h-10 w-auto"
+              priority
+            />
           </Link>
-          <Link
-            href="/mapa"
-            className={cn(
-              'flex items-center gap-1.5 text-sm font-medium px-4 py-2 rounded-full border transition-all',
-              scrolled
-                ? 'border-[#2D5016] text-[#2D5016] hover:bg-[#2D5016] hover:text-white'
-                : 'border-white/40 text-white hover:bg-white/15'
-            )}
-          >
-            <MapPin size={14} />
-            Ver mapa
-          </Link>
-        </div>
 
-        {/* Mobile toggle */}
-        <button
-          onClick={() => setOpen(!open)}
-          className={cn(
-            'lg:hidden p-2 rounded-lg transition-colors',
-            scrolled ? 'text-[#1A1A1A]' : 'text-white'
-          )}
-          aria-label="Menú"
-        >
-          {open ? <X size={22} /> : <Menu size={22} />}
-        </button>
-      </nav>
-
-      {/* Mobile menu */}
-      {open && (
-        <div className="lg:hidden bg-[#FAF7F0] border-t border-black/5 shadow-lg">
-          <div className="max-w-7xl mx-auto px-4 py-6 flex flex-col gap-4">
-            {navLinks.map((link) => (
+          {/* Desktop nav */}
+          <nav className="hidden md:flex items-center gap-6">
+            {NAV_LINKS.map(link => (
               <Link
                 key={link.href}
                 href={link.href}
-                onClick={() => setOpen(false)}
-                className="text-[#1A1A1A] font-medium py-2 border-b border-black/5 last:border-0"
+                className={`text-sm font-semibold transition-colors hover:text-[#45b0e5] ${solid ? 'text-[#243b60]' : 'text-white drop-shadow'}`}
               >
                 {link.label}
               </Link>
             ))}
-            <Link
-              href="/restaurantes"
-              onClick={() => setOpen(false)}
-              className="mt-2 bg-[#2D5016] text-white text-center py-3 rounded-xl font-medium"
-            >
-              Buscar restaurantes
-            </Link>
-          </div>
+          </nav>
+
+          {/* Mobile toggle */}
+          <button
+            className={`md:hidden p-2 rounded-lg ${solid ? 'text-[#243b60]' : 'text-white'}`}
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Menú"
+          >
+            {menuOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
         </div>
-      )}
+
+        {/* Mobile menu */}
+        {menuOpen && (
+          <div className="md:hidden bg-white border-t border-gray-100 py-4 space-y-1">
+            {NAV_LINKS.map(link => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setMenuOpen(false)}
+                className="block px-4 py-3 text-[#243b60] font-semibold text-sm rounded-lg hover:bg-[#C7E7F4] transition-colors"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+        )}
+      </div>
     </header>
   );
 }

@@ -1,11 +1,8 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import { Navbar } from '@/components/ui/Navbar';
 import { Footer } from '@/components/ui/Footer';
-
-const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] });
-const geistMono = Geist_Mono({ variable: '--font-geist-mono', subsets: ['latin'] });
+import { WhatsAppButton } from '@/components/ui/WhatsAppButton';
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://susanalagallega.com'),
@@ -14,8 +11,8 @@ export const metadata: Metadata = {
     template: '%s | Susana La Gallega',
   },
   description:
-    'El directorio gastronómico de referencia en Galicia. Descubre marisquerías, pulperías, restaurantes tradicionales y los mejores lugares donde comer en Galicia.',
-  keywords: ['restaurantes galicia', 'gastronomia gallega', 'donde comer galicia', 'marisquerias galicia'],
+    'El directorio gastronómico de Susana La Gallega. Descubre marisquerías, pulperías, restaurantes tradicionales y los mejores lugares donde comer en Galicia y Madrid.',
+  keywords: ['restaurantes galicia', 'gastronomia gallega', 'donde comer galicia', 'marisquerias galicia', 'susana la gallega', 'saboreando con susana'],
   openGraph: {
     type: 'website',
     locale: 'es_ES',
@@ -28,14 +25,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html
-      lang="es"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col bg-[#FAF7F0]">
+    <html lang="es" className="h-full">
+      <body className="min-h-full flex flex-col" style={{ background: '#F4F3E4' }}>
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
+        <WhatsAppButton />
       </body>
     </html>
   );

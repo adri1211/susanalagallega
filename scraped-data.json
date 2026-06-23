@@ -1,0 +1,902 @@
+[
+  {
+    "slug": "a-pulpeira-no-3574",
+    "nombre": "A’Pulpeira",
+    "descripcion_corta": "A’Pulpeira en Madrid",
+    "descripcion_larga": "",
+    "categoria": "pulperia",
+    "direccion": "",
+    "localidad": "Madrid",
+    "provincia": "A Coruña",
+    "telefono": null,
+    "web": "https://susanalagallega.com/a-pulpeira-no-3574/",
+    "facebook": "https://www.facebook.com/susanafernandezlagallega/",
+    "instagram": "https://www.instagram.com/lagallegasusanafernandez/",
+    "lat": null,
+    "lng": null,
+    "imagen_principal": "https://easycdn.es/4/i/a-pulpeira_33079_cabblog.png",
+    "etiquetas": [
+      "pulperia",
+      "madrid"
+    ],
+    "destacado": false,
+    "activo": true,
+    "_imagenes_extra": [
+      "https://easycdn.es/4/i/meson-muino-kilowatio-cedeira_33095_sd5.jpg",
+      "https://easycdn.es/4/i/restaurante-brisas-ferrol_33094_sd5.jpg",
+      "https://easycdn.es/4/i/cerveceria-australian-naron_33093_sd5.png",
+      "https://easycdn.es/4/i/original_32884.png",
+      "https://easycdn.es/4/i/original_32986.png"
+    ]
+  },
+  {
+    "slug": "as-pedrinas-novas-no-3567",
+    "nombre": "As Pedriñas Novas",
+    "descripcion_corta": "As Pedriñas Novas en Madrid",
+    "descripcion_larga": "",
+    "categoria": "tradicional",
+    "direccion": "",
+    "localidad": "Madrid",
+    "provincia": "A Coruña",
+    "telefono": null,
+    "web": "https://susanalagallega.com/as-pedrinas-novas-no-3567/",
+    "facebook": "https://www.facebook.com/susanafernandezlagallega/",
+    "instagram": "https://www.instagram.com/lagallegasusanafernandez/",
+    "lat": null,
+    "lng": null,
+    "imagen_principal": "https://easycdn.es/4/i/as-pedrinas-novas_33071_cabblog.jpg",
+    "etiquetas": [
+      "tradicional",
+      "madrid"
+    ],
+    "destacado": false,
+    "activo": true,
+    "_imagenes_extra": [
+      "https://easycdn.es/4/i/meson-muino-kilowatio-cedeira_33095_sd5.jpg",
+      "https://easycdn.es/4/i/restaurante-brisas-ferrol_33094_sd5.jpg",
+      "https://easycdn.es/4/i/cerveceria-australian-naron_33093_sd5.png",
+      "https://easycdn.es/4/i/original_32884.png",
+      "https://easycdn.es/4/i/original_32986.png"
+    ]
+  },
+  {
+    "slug": "bienmesabe-arturo-soria-no-3555",
+    "nombre": "Taberna Bienmesabe Arturo Soria",
+    "descripcion_corta": "Taberna Bienmesabe Arturo Soria en Madrid",
+    "descripcion_larga": "",
+    "categoria": "tradicional",
+    "direccion": "",
+    "localidad": "Madrid",
+    "provincia": "A Coruña",
+    "telefono": null,
+    "web": "https://susanalagallega.com/bienmesabe-arturo-soria-no-3555/",
+    "facebook": "https://www.facebook.com/susanafernandezlagallega/",
+    "instagram": "https://www.instagram.com/lagallegasusanafernandez/",
+    "lat": null,
+    "lng": null,
+    "imagen_principal": "https://easycdn.es/4/i/bienmesabe-arturo-soria_33058_cabblog.jpg",
+    "etiquetas": [
+      "tradicional",
+      "madrid"
+    ],
+    "destacado": false,
+    "activo": true,
+    "_imagenes_extra": [
+      "https://easycdn.es/4/i/meson-muino-kilowatio-cedeira_33095_sd5.jpg",
+      "https://easycdn.es/4/i/restaurante-brisas-ferrol_33094_sd5.jpg",
+      "https://easycdn.es/4/i/cerveceria-australian-naron_33093_sd5.png",
+      "https://easycdn.es/4/i/original_32884.png",
+      "https://easycdn.es/4/i/original_32986.png"
+    ]
+  },
+  {
+    "slug": "bienmesabe-general-arrado-no-3561",
+    "nombre": "Taberna Bienmesabe General Arrado",
+    "descripcion_corta": "Taberna Bienmesabe General Arrado en Madrid",
+    "descripcion_larga": "",
+    "categoria": "tradicional",
+    "direccion": "",
+    "localidad": "Madrid",
+    "provincia": "A Coruña",
+    "telefono": null,
+    "web": "https://susanalagallega.com/bienmesabe-general-arrado-no-3561/",
+    "facebook": "https://www.facebook.com/susanafernandezlagallega/",
+    "instagram": "https://www.instagram.com/lagallegasusanafernandez/",
+    "lat": null,
+    "lng": null,
+    "imagen_principal": "https://easycdn.es/4/i/bienmesabe-general-arrado_33065_cabblog.jpg",
+    "etiquetas": [
+      "tradicional",
+      "madrid"
+    ],
+    "destacado": false,
+    "activo": true,
+    "_imagenes_extra": [
+      "https://easycdn.es/4/i/meson-muino-kilowatio-cedeira_33095_sd5.jpg",
+      "https://easycdn.es/4/i/restaurante-brisas-ferrol_33094_sd5.jpg",
+      "https://easycdn.es/4/i/cerveceria-australian-naron_33093_sd5.png",
+      "https://easycdn.es/4/i/original_32884.png",
+      "https://easycdn.es/4/i/original_32986.png"
+    ]
+  },
+  {
+    "slug": "bienmesabe-goya-no-3554",
+    "nombre": "Taberna Bienmesabe Goya",
+    "descripcion_corta": "Taberna Bienmesabe Goya en Madrid",
+    "descripcion_larga": "",
+    "categoria": "tradicional",
+    "direccion": "",
+    "localidad": "Madrid",
+    "provincia": "A Coruña",
+    "telefono": null,
+    "web": "https://susanalagallega.com/bienmesabe-goya-no-3554/",
+    "facebook": "https://www.facebook.com/susanafernandezlagallega/",
+    "instagram": "https://www.instagram.com/lagallegasusanafernandez/",
+    "lat": null,
+    "lng": null,
+    "imagen_principal": "https://easycdn.es/4/i/bienmesabe-goya_33056_cabblog.jpg",
+    "etiquetas": [
+      "tradicional",
+      "madrid"
+    ],
+    "destacado": false,
+    "activo": true,
+    "_imagenes_extra": [
+      "https://easycdn.es/4/i/meson-muino-kilowatio-cedeira_33095_sd5.jpg",
+      "https://easycdn.es/4/i/restaurante-brisas-ferrol_33094_sd5.jpg",
+      "https://easycdn.es/4/i/cerveceria-australian-naron_33093_sd5.png",
+      "https://easycdn.es/4/i/original_32884.png",
+      "https://easycdn.es/4/i/original_32986.png"
+    ]
+  },
+  {
+    "slug": "bienmesabe-mirasierra-no-3553",
+    "nombre": "Taberna Bienmesabe Mirasierra",
+    "descripcion_corta": "Taberna Bienmesabe Mirasierra en Madrid",
+    "descripcion_larga": "",
+    "categoria": "tradicional",
+    "direccion": "",
+    "localidad": "Madrid",
+    "provincia": "A Coruña",
+    "telefono": null,
+    "web": "https://susanalagallega.com/bienmesabe-mirasierra-no-3553/",
+    "facebook": "https://www.facebook.com/susanafernandezlagallega/",
+    "instagram": "https://www.instagram.com/lagallegasusanafernandez/",
+    "lat": null,
+    "lng": null,
+    "imagen_principal": "https://easycdn.es/4/i/bienmesabe-mirasierra_33055_cabblog.jpg",
+    "etiquetas": [
+      "tradicional",
+      "madrid"
+    ],
+    "destacado": false,
+    "activo": true,
+    "_imagenes_extra": [
+      "https://easycdn.es/4/i/meson-muino-kilowatio-cedeira_33095_sd5.jpg",
+      "https://easycdn.es/4/i/restaurante-brisas-ferrol_33094_sd5.jpg",
+      "https://easycdn.es/4/i/cerveceria-australian-naron_33093_sd5.png",
+      "https://easycdn.es/4/i/original_32884.png",
+      "https://easycdn.es/4/i/original_32986.png"
+    ]
+  },
+  {
+    "slug": "bienmesabe-pozas-no-3551",
+    "nombre": "Taberna Bienmesabe General López Pozas",
+    "descripcion_corta": "Taberna Bienmesabe General López Pozas en Madrid",
+    "descripcion_larga": "",
+    "categoria": "tradicional",
+    "direccion": "",
+    "localidad": "Madrid",
+    "provincia": "A Coruña",
+    "telefono": null,
+    "web": "https://susanalagallega.com/bienmesabe-pozas-no-3551/",
+    "facebook": "https://www.facebook.com/susanafernandezlagallega/",
+    "instagram": "https://www.instagram.com/lagallegasusanafernandez/",
+    "lat": null,
+    "lng": null,
+    "imagen_principal": "https://easycdn.es/4/i/bienmesabe-pozas_33054_cabblog.jpg",
+    "etiquetas": [
+      "tradicional",
+      "madrid"
+    ],
+    "destacado": false,
+    "activo": true,
+    "_imagenes_extra": [
+      "https://easycdn.es/4/i/meson-muino-kilowatio-cedeira_33095_sd5.jpg",
+      "https://easycdn.es/4/i/restaurante-brisas-ferrol_33094_sd5.jpg",
+      "https://easycdn.es/4/i/cerveceria-australian-naron_33093_sd5.png",
+      "https://easycdn.es/4/i/original_32884.png",
+      "https://easycdn.es/4/i/original_32986.png"
+    ]
+  },
+  {
+    "slug": "bienmesabe-principe-vergara-no-3558",
+    "nombre": "Taberna Bienmesabe Príncipe de Vergara",
+    "descripcion_corta": "Taberna Bienmesabe Príncipe de Vergara en Madrid",
+    "descripcion_larga": "",
+    "categoria": "tradicional",
+    "direccion": "",
+    "localidad": "Madrid",
+    "provincia": "A Coruña",
+    "telefono": null,
+    "web": "https://susanalagallega.com/bienmesabe-principe-vergara-no-3558/",
+    "facebook": "https://www.facebook.com/susanafernandezlagallega/",
+    "instagram": "https://www.instagram.com/lagallegasusanafernandez/",
+    "lat": null,
+    "lng": null,
+    "imagen_principal": "https://easycdn.es/4/i/bienmesabe-principe-vergara_33062_cabblog.jpg",
+    "etiquetas": [
+      "tradicional",
+      "madrid"
+    ],
+    "destacado": false,
+    "activo": true,
+    "_imagenes_extra": [
+      "https://easycdn.es/4/i/meson-muino-kilowatio-cedeira_33095_sd5.jpg",
+      "https://easycdn.es/4/i/restaurante-brisas-ferrol_33094_sd5.jpg",
+      "https://easycdn.es/4/i/cerveceria-australian-naron_33093_sd5.png",
+      "https://easycdn.es/4/i/original_32884.png",
+      "https://easycdn.es/4/i/original_32986.png"
+    ]
+  },
+  {
+    "slug": "bienmesabe-santa-engracia-no-3560",
+    "nombre": "Taberna Bienmesabe Santa Engracia",
+    "descripcion_corta": "Taberna Bienmesabe Santa Engracia en Madrid",
+    "descripcion_larga": "",
+    "categoria": "tradicional",
+    "direccion": "",
+    "localidad": "Madrid",
+    "provincia": "A Coruña",
+    "telefono": null,
+    "web": "https://susanalagallega.com/bienmesabe-santa-engracia-no-3560/",
+    "facebook": "https://www.facebook.com/susanafernandezlagallega/",
+    "instagram": "https://www.instagram.com/lagallegasusanafernandez/",
+    "lat": null,
+    "lng": null,
+    "imagen_principal": "https://easycdn.es/4/i/bienmesabe-santa-engracia_33064_cabblog.jpg",
+    "etiquetas": [
+      "tradicional",
+      "madrid"
+    ],
+    "destacado": false,
+    "activo": true,
+    "_imagenes_extra": [
+      "https://easycdn.es/4/i/meson-muino-kilowatio-cedeira_33095_sd5.jpg",
+      "https://easycdn.es/4/i/restaurante-brisas-ferrol_33094_sd5.jpg",
+      "https://easycdn.es/4/i/cerveceria-australian-naron_33093_sd5.png",
+      "https://easycdn.es/4/i/original_32884.png",
+      "https://easycdn.es/4/i/original_32986.png"
+    ]
+  },
+  {
+    "slug": "bienmesabe-soto-moraleja-no-3562",
+    "nombre": "Taberna Bienmesabe Soto de la Moraleja",
+    "descripcion_corta": "Taberna Bienmesabe Soto de la Moraleja en Madrid",
+    "descripcion_larga": "",
+    "categoria": "tradicional",
+    "direccion": "",
+    "localidad": "Madrid",
+    "provincia": "A Coruña",
+    "telefono": null,
+    "web": "https://susanalagallega.com/bienmesabe-soto-moraleja-no-3562/",
+    "facebook": "https://www.facebook.com/susanafernandezlagallega/",
+    "instagram": "https://www.instagram.com/lagallegasusanafernandez/",
+    "lat": null,
+    "lng": null,
+    "imagen_principal": "https://easycdn.es/4/i/bienmesabe-soto-moraleja_33066_cabblog.jpg",
+    "etiquetas": [
+      "tradicional",
+      "madrid"
+    ],
+    "destacado": false,
+    "activo": true,
+    "_imagenes_extra": [
+      "https://easycdn.es/4/i/meson-muino-kilowatio-cedeira_33095_sd5.jpg",
+      "https://easycdn.es/4/i/restaurante-brisas-ferrol_33094_sd5.jpg",
+      "https://easycdn.es/4/i/cerveceria-australian-naron_33093_sd5.png",
+      "https://easycdn.es/4/i/original_32884.png",
+      "https://easycdn.es/4/i/original_32986.png"
+    ]
+  },
+  {
+    "slug": "bienmesabe-trafalgar-no-3559",
+    "nombre": "Taberna Bienmesabe Trafalgar",
+    "descripcion_corta": "Taberna Bienmesabe Trafalgar en Galicia",
+    "descripcion_larga": "",
+    "categoria": "tradicional",
+    "direccion": "",
+    "localidad": "Galicia",
+    "provincia": "A Coruña",
+    "telefono": null,
+    "web": "https://susanalagallega.com/bienmesabe-trafalgar-no-3559/",
+    "facebook": "https://www.facebook.com/susanafernandezlagallega/",
+    "instagram": "https://www.instagram.com/lagallegasusanafernandez/",
+    "lat": null,
+    "lng": null,
+    "imagen_principal": "https://easycdn.es/4/i/bienmesabe-trafalgar_33063_cabblog.jpg",
+    "etiquetas": [
+      "tradicional",
+      "galicia"
+    ],
+    "destacado": false,
+    "activo": true,
+    "_imagenes_extra": [
+      "https://easycdn.es/4/i/meson-muino-kilowatio-cedeira_33095_sd5.jpg",
+      "https://easycdn.es/4/i/restaurante-brisas-ferrol_33094_sd5.jpg",
+      "https://easycdn.es/4/i/cerveceria-australian-naron_33093_sd5.png",
+      "https://easycdn.es/4/i/original_32884.png",
+      "https://easycdn.es/4/i/original_32986.png"
+    ]
+  },
+  {
+    "slug": "bienmesabe-zurbano-no-3557",
+    "nombre": "Taberna Bienmesabe Zurbano",
+    "descripcion_corta": "Taberna Bienmesabe Zurbano en Madrid",
+    "descripcion_larga": "",
+    "categoria": "tradicional",
+    "direccion": "",
+    "localidad": "Madrid",
+    "provincia": "A Coruña",
+    "telefono": null,
+    "web": "https://susanalagallega.com/bienmesabe-zurbano-no-3557/",
+    "facebook": "https://www.facebook.com/susanafernandezlagallega/",
+    "instagram": "https://www.instagram.com/lagallegasusanafernandez/",
+    "lat": null,
+    "lng": null,
+    "imagen_principal": "https://easycdn.es/4/i/bienmesabe-zurbano_33061_cabblog.png",
+    "etiquetas": [
+      "tradicional",
+      "madrid"
+    ],
+    "destacado": false,
+    "activo": true,
+    "_imagenes_extra": [
+      "https://easycdn.es/4/i/meson-muino-kilowatio-cedeira_33095_sd5.jpg",
+      "https://easycdn.es/4/i/restaurante-brisas-ferrol_33094_sd5.jpg",
+      "https://easycdn.es/4/i/cerveceria-australian-naron_33093_sd5.png",
+      "https://easycdn.es/4/i/original_32884.png",
+      "https://easycdn.es/4/i/original_32986.png"
+    ]
+  },
+  {
+    "slug": "botin-no-3568",
+    "nombre": "Botín",
+    "descripcion_corta": "Botín en Madrid",
+    "descripcion_larga": "",
+    "categoria": "tradicional",
+    "direccion": "",
+    "localidad": "Madrid",
+    "provincia": "A Coruña",
+    "telefono": null,
+    "web": "https://susanalagallega.com/botin-no-3568/",
+    "facebook": "https://www.facebook.com/susanafernandezlagallega/",
+    "instagram": "https://www.instagram.com/lagallegasusanafernandez/",
+    "lat": null,
+    "lng": null,
+    "imagen_principal": "https://easycdn.es/4/i/botin_33072_cabblog.jpg",
+    "etiquetas": [
+      "tradicional",
+      "madrid"
+    ],
+    "destacado": false,
+    "activo": true,
+    "_imagenes_extra": [
+      "https://easycdn.es/4/i/meson-muino-kilowatio-cedeira_33095_sd5.jpg",
+      "https://easycdn.es/4/i/restaurante-brisas-ferrol_33094_sd5.jpg",
+      "https://easycdn.es/4/i/cerveceria-australian-naron_33093_sd5.png",
+      "https://easycdn.es/4/i/original_32884.png",
+      "https://easycdn.es/4/i/original_32986.png"
+    ]
+  },
+  {
+    "slug": "camino-estrelas-no-3573",
+    "nombre": "Camiño das Estrelas",
+    "descripcion_corta": "Camiño das Estrelas en Madrid",
+    "descripcion_larga": "",
+    "categoria": "tradicional",
+    "direccion": "",
+    "localidad": "Madrid",
+    "provincia": "A Coruña",
+    "telefono": null,
+    "web": "https://susanalagallega.com/camino-estrelas-no-3573/",
+    "facebook": "https://www.facebook.com/susanafernandezlagallega/",
+    "instagram": "https://www.instagram.com/lagallegasusanafernandez/",
+    "lat": null,
+    "lng": null,
+    "imagen_principal": "https://easycdn.es/4/i/camino-estrelas_33078_cabblog.png",
+    "etiquetas": [
+      "tradicional",
+      "madrid"
+    ],
+    "destacado": false,
+    "activo": true,
+    "_imagenes_extra": [
+      "https://easycdn.es/4/i/meson-muino-kilowatio-cedeira_33095_sd5.jpg",
+      "https://easycdn.es/4/i/restaurante-brisas-ferrol_33094_sd5.jpg",
+      "https://easycdn.es/4/i/cerveceria-australian-naron_33093_sd5.png",
+      "https://easycdn.es/4/i/original_32884.png",
+      "https://easycdn.es/4/i/original_32986.png"
+    ]
+  },
+  {
+    "slug": "carta-marina-no-3570",
+    "nombre": "Carta Marina",
+    "descripcion_corta": "Carta Marina en Madrid",
+    "descripcion_larga": "",
+    "categoria": "tradicional",
+    "direccion": "",
+    "localidad": "Madrid",
+    "provincia": "A Coruña",
+    "telefono": null,
+    "web": "https://susanalagallega.com/carta-marina-no-3570/",
+    "facebook": "https://www.facebook.com/susanafernandezlagallega/",
+    "instagram": "https://www.instagram.com/lagallegasusanafernandez/",
+    "lat": null,
+    "lng": null,
+    "imagen_principal": "https://easycdn.es/4/i/carta-marina_33074_cabblog.jpg",
+    "etiquetas": [
+      "tradicional",
+      "madrid"
+    ],
+    "destacado": false,
+    "activo": true,
+    "_imagenes_extra": [
+      "https://easycdn.es/4/i/meson-muino-kilowatio-cedeira_33095_sd5.jpg",
+      "https://easycdn.es/4/i/restaurante-brisas-ferrol_33094_sd5.jpg",
+      "https://easycdn.es/4/i/cerveceria-australian-naron_33093_sd5.png",
+      "https://easycdn.es/4/i/original_32884.png",
+      "https://easycdn.es/4/i/original_32986.png"
+    ]
+  },
+  {
+    "slug": "cerveceria-australian-naron-no-3581",
+    "nombre": "Cervecería Australian",
+    "descripcion_corta": "Cervecería Australian en Narón",
+    "descripcion_larga": "",
+    "categoria": "taperia",
+    "direccion": "",
+    "localidad": "Narón",
+    "provincia": "A Coruña",
+    "telefono": null,
+    "web": "https://susanalagallega.com/cerveceria-australian-naron-no-3581/",
+    "facebook": "https://www.facebook.com/susanafernandezlagallega/",
+    "instagram": "https://www.instagram.com/lagallegasusanafernandez/",
+    "lat": null,
+    "lng": null,
+    "imagen_principal": "https://easycdn.es/4/i/cerveceria-australian-naron_33093_cabblog.png",
+    "etiquetas": [
+      "taperia",
+      "narón"
+    ],
+    "destacado": false,
+    "activo": true,
+    "_imagenes_extra": [
+      "https://easycdn.es/4/i/meson-muino-kilowatio-cedeira_33095_sd5.jpg",
+      "https://easycdn.es/4/i/restaurante-brisas-ferrol_33094_sd5.jpg",
+      "https://easycdn.es/4/i/cerveceria-australian-naron_33093_sd5.png",
+      "https://easycdn.es/4/i/original_32884.png",
+      "https://easycdn.es/4/i/original_32986.png"
+    ]
+  },
+  {
+    "slug": "gastrobar-nua-no-3579",
+    "nombre": "Gastrobar Nuá",
+    "descripcion_corta": "Gastrobar Nuá en Ferrol",
+    "descripcion_larga": "",
+    "categoria": "taperia",
+    "direccion": "",
+    "localidad": "Ferrol",
+    "provincia": "A Coruña",
+    "telefono": null,
+    "web": "https://susanalagallega.com/gastrobar-nua-no-3579/",
+    "facebook": "https://www.facebook.com/susanafernandezlagallega/",
+    "instagram": "https://www.instagram.com/lagallegasusanafernandez/",
+    "lat": null,
+    "lng": null,
+    "imagen_principal": "https://easycdn.es/4/i/gastrobar-nua_33090_cabblog.jpg",
+    "etiquetas": [
+      "taperia",
+      "ferrol"
+    ],
+    "destacado": false,
+    "activo": true,
+    "_imagenes_extra": [
+      "https://easycdn.es/4/i/meson-muino-kilowatio-cedeira_33095_sd5.jpg",
+      "https://easycdn.es/4/i/restaurante-brisas-ferrol_33094_sd5.jpg",
+      "https://easycdn.es/4/i/cerveceria-australian-naron_33093_sd5.png",
+      "https://easycdn.es/4/i/original_32884.png",
+      "https://easycdn.es/4/i/original_32986.png"
+    ]
+  },
+  {
+    "slug": "la-castafiore-no-3569",
+    "nombre": "La Castafiore",
+    "descripcion_corta": "La Castafiore en Madrid",
+    "descripcion_larga": "",
+    "categoria": "tradicional",
+    "direccion": "",
+    "localidad": "Madrid",
+    "provincia": "A Coruña",
+    "telefono": null,
+    "web": "https://susanalagallega.com/la-castafiore-no-3569/",
+    "facebook": "https://www.facebook.com/susanafernandezlagallega/",
+    "instagram": "https://www.instagram.com/lagallegasusanafernandez/",
+    "lat": null,
+    "lng": null,
+    "imagen_principal": "https://easycdn.es/4/i/la-castafiore_33073_cabblog.png",
+    "etiquetas": [
+      "tradicional",
+      "madrid"
+    ],
+    "destacado": false,
+    "activo": true,
+    "_imagenes_extra": [
+      "https://easycdn.es/4/i/meson-muino-kilowatio-cedeira_33095_sd5.jpg",
+      "https://easycdn.es/4/i/restaurante-brisas-ferrol_33094_sd5.jpg",
+      "https://easycdn.es/4/i/cerveceria-australian-naron_33093_sd5.png",
+      "https://easycdn.es/4/i/original_32884.png",
+      "https://easycdn.es/4/i/original_32986.png"
+    ]
+  },
+  {
+    "slug": "los-torreznos-alonso-cano-no-3564",
+    "nombre": "Los Torreznos Alonso Cano",
+    "descripcion_corta": "Los Torreznos Alonso Cano en Galicia",
+    "descripcion_larga": "",
+    "categoria": "tradicional",
+    "direccion": "",
+    "localidad": "Galicia",
+    "provincia": "A Coruña",
+    "telefono": null,
+    "web": "https://susanalagallega.com/los-torreznos-alonso-cano-no-3564/",
+    "facebook": "https://www.facebook.com/susanafernandezlagallega/",
+    "instagram": "https://www.instagram.com/lagallegasusanafernandez/",
+    "lat": null,
+    "lng": null,
+    "imagen_principal": "https://easycdn.es/4/i/los-torreznos-alonso-cano_33068_cabblog.png",
+    "etiquetas": [
+      "tradicional",
+      "galicia"
+    ],
+    "destacado": false,
+    "activo": true,
+    "_imagenes_extra": [
+      "https://easycdn.es/4/i/meson-muino-kilowatio-cedeira_33095_sd5.jpg",
+      "https://easycdn.es/4/i/restaurante-brisas-ferrol_33094_sd5.jpg",
+      "https://easycdn.es/4/i/cerveceria-australian-naron_33093_sd5.png",
+      "https://easycdn.es/4/i/original_32884.png",
+      "https://easycdn.es/4/i/original_32986.png"
+    ]
+  },
+  {
+    "slug": "los-torreznos-goya-no-3563",
+    "nombre": "Los Torreznos Goya",
+    "descripcion_corta": "Los Torreznos Goya en Madrid",
+    "descripcion_larga": "",
+    "categoria": "tradicional",
+    "direccion": "",
+    "localidad": "Madrid",
+    "provincia": "A Coruña",
+    "telefono": null,
+    "web": "https://susanalagallega.com/los-torreznos-goya-no-3563/",
+    "facebook": "https://www.facebook.com/susanafernandezlagallega/",
+    "instagram": "https://www.instagram.com/lagallegasusanafernandez/",
+    "lat": null,
+    "lng": null,
+    "imagen_principal": "https://easycdn.es/4/i/los-torreznos-goya_33067_cabblog.jpg",
+    "etiquetas": [
+      "tradicional",
+      "madrid"
+    ],
+    "destacado": false,
+    "activo": true,
+    "_imagenes_extra": [
+      "https://easycdn.es/4/i/meson-muino-kilowatio-cedeira_33095_sd5.jpg",
+      "https://easycdn.es/4/i/restaurante-brisas-ferrol_33094_sd5.jpg",
+      "https://easycdn.es/4/i/cerveceria-australian-naron_33093_sd5.png",
+      "https://easycdn.es/4/i/original_32884.png",
+      "https://easycdn.es/4/i/original_32986.png"
+    ]
+  },
+  {
+    "slug": "los-torreznos-lopez-de-hoyos-no-3565",
+    "nombre": "Los Torreznos López de Hoyos",
+    "descripcion_corta": "Los Torreznos López de Hoyos en Galicia",
+    "descripcion_larga": "",
+    "categoria": "tradicional",
+    "direccion": "",
+    "localidad": "Galicia",
+    "provincia": "A Coruña",
+    "telefono": null,
+    "web": "https://susanalagallega.com/los-torreznos-lopez-de-hoyos-no-3565/",
+    "facebook": "https://www.facebook.com/susanafernandezlagallega/",
+    "instagram": "https://www.instagram.com/lagallegasusanafernandez/",
+    "lat": null,
+    "lng": null,
+    "imagen_principal": "https://easycdn.es/4/i/los-torreznos-lopez-de-hoyos_33069_cabblog.png",
+    "etiquetas": [
+      "tradicional",
+      "galicia"
+    ],
+    "destacado": false,
+    "activo": true,
+    "_imagenes_extra": [
+      "https://easycdn.es/4/i/meson-muino-kilowatio-cedeira_33095_sd5.jpg",
+      "https://easycdn.es/4/i/restaurante-brisas-ferrol_33094_sd5.jpg",
+      "https://easycdn.es/4/i/cerveceria-australian-naron_33093_sd5.png",
+      "https://easycdn.es/4/i/original_32884.png",
+      "https://easycdn.es/4/i/original_32986.png"
+    ]
+  },
+  {
+    "slug": "meson-gallego-ii-no-3576",
+    "nombre": "Mesón Gallego II",
+    "descripcion_corta": "Mesón Gallego II en Madrid",
+    "descripcion_larga": "",
+    "categoria": "tradicional",
+    "direccion": "",
+    "localidad": "Madrid",
+    "provincia": "A Coruña",
+    "telefono": null,
+    "web": "https://susanalagallega.com/meson-gallego-ii-no-3576/",
+    "facebook": "https://www.facebook.com/susanafernandezlagallega/",
+    "instagram": "https://www.instagram.com/lagallegasusanafernandez/",
+    "lat": null,
+    "lng": null,
+    "imagen_principal": "https://easycdn.es/4/i/meson-gallego-ii_33081_cabblog.png",
+    "etiquetas": [
+      "tradicional",
+      "madrid"
+    ],
+    "destacado": false,
+    "activo": true,
+    "_imagenes_extra": [
+      "https://easycdn.es/4/i/meson-muino-kilowatio-cedeira_33095_sd5.jpg",
+      "https://easycdn.es/4/i/restaurante-brisas-ferrol_33094_sd5.jpg",
+      "https://easycdn.es/4/i/cerveceria-australian-naron_33093_sd5.png",
+      "https://easycdn.es/4/i/original_32884.png",
+      "https://easycdn.es/4/i/original_32986.png"
+    ]
+  },
+  {
+    "slug": "meson-gallego-no-3575",
+    "nombre": "Mesón Gallego",
+    "descripcion_corta": "Mesón Gallego en Madrid",
+    "descripcion_larga": "",
+    "categoria": "tradicional",
+    "direccion": "",
+    "localidad": "Madrid",
+    "provincia": "A Coruña",
+    "telefono": null,
+    "web": "https://susanalagallega.com/meson-gallego-no-3575/",
+    "facebook": "https://www.facebook.com/susanafernandezlagallega/",
+    "instagram": "https://www.instagram.com/lagallegasusanafernandez/",
+    "lat": null,
+    "lng": null,
+    "imagen_principal": "https://easycdn.es/4/i/meson-gallego_33080_cabblog.jpg",
+    "etiquetas": [
+      "tradicional",
+      "madrid"
+    ],
+    "destacado": false,
+    "activo": true,
+    "_imagenes_extra": [
+      "https://easycdn.es/4/i/meson-muino-kilowatio-cedeira_33095_sd5.jpg",
+      "https://easycdn.es/4/i/restaurante-brisas-ferrol_33094_sd5.jpg",
+      "https://easycdn.es/4/i/cerveceria-australian-naron_33093_sd5.png",
+      "https://easycdn.es/4/i/original_32884.png",
+      "https://easycdn.es/4/i/original_32986.png"
+    ]
+  },
+  {
+    "slug": "meson-muino-kilowatio-cedeira-no-3583",
+    "nombre": "Mesón Muíño Kilowatio",
+    "descripcion_corta": "Mesón Muíño Kilowatio en Cedeira",
+    "descripcion_larga": "",
+    "categoria": "tradicional",
+    "direccion": "",
+    "localidad": "Cedeira",
+    "provincia": "A Coruña",
+    "telefono": null,
+    "web": "https://susanalagallega.com/meson-muino-kilowatio-cedeira-no-3583/",
+    "facebook": "https://www.facebook.com/susanafernandezlagallega/",
+    "instagram": "https://www.instagram.com/lagallegasusanafernandez/",
+    "lat": null,
+    "lng": null,
+    "imagen_principal": "https://easycdn.es/4/i/meson-muino-kilowatio-cedeira_33095_cabblog.jpg",
+    "etiquetas": [
+      "tradicional",
+      "cedeira"
+    ],
+    "destacado": false,
+    "activo": true,
+    "_imagenes_extra": [
+      "https://easycdn.es/4/i/meson-muino-kilowatio-cedeira_33095_sd5.jpg",
+      "https://easycdn.es/4/i/restaurante-brisas-ferrol_33094_sd5.jpg",
+      "https://easycdn.es/4/i/cerveceria-australian-naron_33093_sd5.png",
+      "https://easycdn.es/4/i/original_32884.png",
+      "https://easycdn.es/4/i/original_32986.png"
+    ]
+  },
+  {
+    "slug": "meson-o-galo-no-3580",
+    "nombre": "Mesón O Galo",
+    "descripcion_corta": "Mesón O Galo en Ferrol",
+    "descripcion_larga": "",
+    "categoria": "tradicional",
+    "direccion": "",
+    "localidad": "Ferrol",
+    "provincia": "A Coruña",
+    "telefono": null,
+    "web": "https://susanalagallega.com/meson-o-galo-no-3580/",
+    "facebook": "https://www.facebook.com/susanafernandezlagallega/",
+    "instagram": "https://www.instagram.com/lagallegasusanafernandez/",
+    "lat": null,
+    "lng": null,
+    "imagen_principal": "https://easycdn.es/4/i/meson-o-galo_33091_cabblog.jpg",
+    "etiquetas": [
+      "tradicional",
+      "ferrol"
+    ],
+    "destacado": false,
+    "activo": true,
+    "_imagenes_extra": [
+      "https://easycdn.es/4/i/meson-muino-kilowatio-cedeira_33095_sd5.jpg",
+      "https://easycdn.es/4/i/restaurante-brisas-ferrol_33094_sd5.jpg",
+      "https://easycdn.es/4/i/cerveceria-australian-naron_33093_sd5.png",
+      "https://easycdn.es/4/i/original_32884.png",
+      "https://easycdn.es/4/i/original_32986.png"
+    ]
+  },
+  {
+    "slug": "o-faro-laxe-no-3571",
+    "nombre": "O Faro de Laxe",
+    "descripcion_corta": "O Faro de Laxe en Laxe",
+    "descripcion_larga": "",
+    "categoria": "tradicional",
+    "direccion": "",
+    "localidad": "Laxe",
+    "provincia": "A Coruña",
+    "telefono": null,
+    "web": "https://susanalagallega.com/o-faro-laxe-no-3571/",
+    "facebook": "https://www.facebook.com/susanafernandezlagallega/",
+    "instagram": "https://www.instagram.com/lagallegasusanafernandez/",
+    "lat": null,
+    "lng": null,
+    "imagen_principal": "https://easycdn.es/4/i/o-faro-laxe_33075_cabblog.jpg",
+    "etiquetas": [
+      "tradicional",
+      "laxe"
+    ],
+    "destacado": false,
+    "activo": true,
+    "_imagenes_extra": [
+      "https://easycdn.es/4/i/meson-muino-kilowatio-cedeira_33095_sd5.jpg",
+      "https://easycdn.es/4/i/restaurante-brisas-ferrol_33094_sd5.jpg",
+      "https://easycdn.es/4/i/cerveceria-australian-naron_33093_sd5.png",
+      "https://easycdn.es/4/i/original_32884.png",
+      "https://easycdn.es/4/i/original_32986.png"
+    ]
+  },
+  {
+    "slug": "parrilla-sanabresa-no-3566",
+    "nombre": "Parrilla Sanabresa",
+    "descripcion_corta": "Parrilla Sanabresa en Madrid",
+    "descripcion_larga": "",
+    "categoria": "parrillada",
+    "direccion": "",
+    "localidad": "Madrid",
+    "provincia": "A Coruña",
+    "telefono": null,
+    "web": "https://susanalagallega.com/parrilla-sanabresa-no-3566/",
+    "facebook": "https://www.facebook.com/susanafernandezlagallega/",
+    "instagram": "https://www.instagram.com/lagallegasusanafernandez/",
+    "lat": null,
+    "lng": null,
+    "imagen_principal": "https://easycdn.es/4/i/parrilla-sanabresa_33070_cabblog.jpg",
+    "etiquetas": [
+      "parrillada",
+      "madrid"
+    ],
+    "destacado": false,
+    "activo": true,
+    "_imagenes_extra": [
+      "https://easycdn.es/4/i/meson-muino-kilowatio-cedeira_33095_sd5.jpg",
+      "https://easycdn.es/4/i/restaurante-brisas-ferrol_33094_sd5.jpg",
+      "https://easycdn.es/4/i/cerveceria-australian-naron_33093_sd5.png",
+      "https://easycdn.es/4/i/original_32884.png",
+      "https://easycdn.es/4/i/original_32986.png"
+    ]
+  },
+  {
+    "slug": "restaurante-brisas-ferrol-no-3582",
+    "nombre": "Restaurante Brisas",
+    "descripcion_corta": "Restaurante Brisas en Ferrol",
+    "descripcion_larga": "",
+    "categoria": "tradicional",
+    "direccion": "",
+    "localidad": "Ferrol",
+    "provincia": "A Coruña",
+    "telefono": null,
+    "web": "https://susanalagallega.com/restaurante-brisas-ferrol-no-3582/",
+    "facebook": "https://www.facebook.com/susanafernandezlagallega/",
+    "instagram": "https://www.instagram.com/lagallegasusanafernandez/",
+    "lat": null,
+    "lng": null,
+    "imagen_principal": "https://easycdn.es/4/i/restaurante-brisas-ferrol_33094_cabblog.jpg",
+    "etiquetas": [
+      "tradicional",
+      "ferrol"
+    ],
+    "destacado": false,
+    "activo": true,
+    "_imagenes_extra": [
+      "https://easycdn.es/4/i/meson-muino-kilowatio-cedeira_33095_sd5.jpg",
+      "https://easycdn.es/4/i/restaurante-brisas-ferrol_33094_sd5.jpg",
+      "https://easycdn.es/4/i/cerveceria-australian-naron_33093_sd5.png",
+      "https://easycdn.es/4/i/original_32884.png",
+      "https://easycdn.es/4/i/original_32986.png"
+    ]
+  },
+  {
+    "slug": "restaurante-carta-marina-madrid-no-3534",
+    "nombre": "Restaurante CartaMarina",
+    "descripcion_corta": "Restaurante CartaMarina en Santiago de Compostela",
+    "descripcion_larga": "",
+    "categoria": "tradicional",
+    "direccion": "",
+    "localidad": "Santiago de Compostela",
+    "provincia": "A Coruña",
+    "telefono": null,
+    "web": "https://susanalagallega.com/restaurante-carta-marina-madrid-no-3534/",
+    "facebook": "https://www.facebook.com/susanafernandezlagallega/",
+    "instagram": "https://www.instagram.com/lagallegasusanafernandez/",
+    "lat": null,
+    "lng": null,
+    "imagen_principal": "https://easycdn.es/4/i/restaurante-carta-marina-madrid_32872_cabblog.png",
+    "etiquetas": [
+      "tradicional",
+      "santiago de compostela"
+    ],
+    "destacado": false,
+    "activo": true,
+    "_imagenes_extra": [
+      "https://easycdn.es/4/i/meson-muino-kilowatio-cedeira_33095_sd5.jpg",
+      "https://easycdn.es/4/i/restaurante-brisas-ferrol_33094_sd5.jpg",
+      "https://easycdn.es/4/i/cerveceria-australian-naron_33093_sd5.png",
+      "https://easycdn.es/4/i/original_32884.png",
+      "https://easycdn.es/4/i/original_32986.png"
+    ]
+  },
+  {
+    "slug": "urimare-no-3578",
+    "nombre": "Urimare",
+    "descripcion_corta": "Urimare en Narón",
+    "descripcion_larga": "",
+    "categoria": "tradicional",
+    "direccion": "",
+    "localidad": "Narón",
+    "provincia": "A Coruña",
+    "telefono": null,
+    "web": "https://susanalagallega.com/urimare-no-3578/",
+    "facebook": "https://www.facebook.com/susanafernandezlagallega/",
+    "instagram": "https://www.instagram.com/lagallegasusanafernandez/",
+    "lat": null,
+    "lng": null,
+    "imagen_principal": "https://easycdn.es/4/i/urimare_33089_cabblog.jpg",
+    "etiquetas": [
+      "tradicional",
+      "narón"
+    ],
+    "destacado": false,
+    "activo": true,
+    "_imagenes_extra": [
+      "https://easycdn.es/4/i/meson-muino-kilowatio-cedeira_33095_sd5.jpg",
+      "https://easycdn.es/4/i/restaurante-brisas-ferrol_33094_sd5.jpg",
+      "https://easycdn.es/4/i/cerveceria-australian-naron_33093_sd5.png",
+      "https://easycdn.es/4/i/original_32884.png",
+      "https://easycdn.es/4/i/original_32986.png"
+    ]
+  }
+]
