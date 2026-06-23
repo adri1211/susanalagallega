@@ -1,9 +1,9 @@
 import { HeroSection } from '@/components/home/HeroSection';
+import { StorySection } from '@/components/home/StorySection';
 import { MediaSection } from '@/components/home/MediaSection';
 import { CategoriesSection } from '@/components/home/CategoriesSection';
 import { FeaturedSection } from '@/components/home/FeaturedSection';
 import { MapTeaser } from '@/components/home/MapTeaser';
-import { StorySection } from '@/components/home/StorySection';
 import { getDestacados } from '@/lib/data';
 
 export const revalidate = 3600;
@@ -13,17 +13,23 @@ export default async function HomePage() {
   try {
     destacados = await getDestacados();
   } catch {
-    // Si Supabase no está configurado, usa datos demo
+    // Supabase not configured
   }
 
   return (
     <>
+      {/* 1. Susana / Marca personal */}
       <HeroSection />
-      <MediaSection />
-      <CategoriesSection />
-      <FeaturedSection restaurantes={destacados} />
-      <MapTeaser />
+      {/* 2. El programa de TV */}
       <StorySection />
+      {/* 3. Me habrás visto en */}
+      <MediaSection />
+      {/* 4. Explorar por categoría */}
+      <CategoriesSection />
+      {/* 5. Restaurantes destacados */}
+      <FeaturedSection restaurantes={destacados} />
+      {/* 6. Guía descargable */}
+      <MapTeaser />
     </>
   );
 }
