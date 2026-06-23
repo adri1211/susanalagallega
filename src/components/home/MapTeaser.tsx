@@ -15,71 +15,74 @@ const CIUDADES = [
 
 export function MapTeaser() {
   return (
-    <section className="py-0 overflow-hidden" style={{ background: '#F4F3E4' }}>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left: texto + descarga */}
+    <section style={{ background: '#ffffff', padding: '5rem 0' }}>
+      <style>{`
+        .ciudad-link { transition: all 0.2s; }
+        .ciudad-link:hover { border-color: #45b0e5 !important; background: #C7E7F4 !important; }
+        @media(max-width:768px){
+          .guide-layout { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
+          .guide-photo { height: 300px !important; }
+          .guide-badge { display: none !important; }
+        }
+      `}</style>
+      <div style={{ maxWidth: 1152, margin: '0 auto', padding: '0 1.5rem' }}>
+        <div className="guide-layout" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'center' }}>
+
+          {/* Izquierda */}
           <div>
-            <p className="section-label text-[#45b0e5] mb-2">Llévala contigo</p>
-            <h2 className="text-3xl sm:text-4xl mb-4" style={{ fontFamily: 'Lilita One, cursive', color: '#243b60' }}>
+            <span style={{ display: 'block', fontFamily: 'Poppins, sans-serif', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#45b0e5', marginBottom: 10 }}>Llévala contigo</span>
+            <h2 style={{ fontFamily: 'Lilita One, cursive', color: '#243b60', fontSize: 'clamp(2rem, 3.5vw, 2.8rem)', margin: '0 0 1.25rem', lineHeight: 1.1 }}>
               La guía de sabores<br />gratuita de Susana
             </h2>
-            <p className="text-[#5a6a7a] text-base leading-relaxed mb-8">
-              Susana ha reunido sus mejores recomendaciones en una guía descargable.
-              Restaurantes, secretos gastronómicos y los rincones favoritos de Galicia
-              — todo en tu bolsillo.
+            <p style={{ color: '#6b7a8d', fontSize: '0.95rem', lineHeight: 1.8, marginBottom: '2rem', maxWidth: 440 }}>
+              Susana ha reunido sus mejores recomendaciones en una guía descargable gratuita. Restaurantes, secretos y los rincones favoritos de Galicia — todo en tu bolsillo.
             </p>
-
-            <a href="/guia-de-sabores.pdf" download
-              className="btn-primario mb-8 inline-flex">
+            <a href="/guia-de-sabores.pdf" download className="btn-azul" style={{ marginBottom: '2.5rem', display: 'inline-flex' }}>
               <Download size={16} />
               Descargar guía gratis (PDF)
             </a>
 
-            {/* Ciudades */}
-            <div>
-              <p className="text-[#243b60]/50 text-xs font-bold uppercase tracking-widest mb-4">Restaurantes por ciudad</p>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-                {CIUDADES.map(c => (
-                  <Link key={c.slug} href={`/restaurantes?localidad=${c.slug}`}
-                    className="group flex items-center gap-2.5 p-3 bg-white rounded-xl border border-[#243b60]/08 hover:border-[#45b0e5] hover:shadow-md transition-all">
-                    <MapPin size={13} className="text-[#45b0e5] flex-shrink-0" />
-                    <div>
-                      <p className="text-[#243b60] text-xs font-bold group-hover:text-[#45b0e5] transition-colors">{c.label}</p>
-                      <p className="text-[#5a6a7a] text-[10px]">{c.n} restaurantes</p>
-                    </div>
-                  </Link>
-                ))}
-              </div>
+            <p style={{ fontFamily: 'Poppins, sans-serif', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(36,59,96,0.4)', marginBottom: '1rem', display: 'block' }}>
+              Restaurantes por ciudad
+            </p>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.625rem' }}>
+              {CIUDADES.map(c => (
+                <Link key={c.slug} href={`/restaurantes?localidad=${c.slug}`} className="ciudad-link"
+                  style={{
+                    display: 'flex', alignItems: 'center', gap: 8, padding: '0.625rem 0.875rem',
+                    background: '#F4F3E4', borderRadius: '0.75rem',
+                    border: '1px solid rgba(36,59,96,0.07)', textDecoration: 'none',
+                  }}>
+                  <MapPin size={12} style={{ color: '#45b0e5', flexShrink: 0 }} />
+                  <div>
+                    <p style={{ color: '#243b60', fontSize: '0.78rem', fontWeight: 700, margin: 0 }}>{c.label}</p>
+                    <p style={{ color: '#6b7a8d', fontSize: '0.65rem', margin: 0 }}>{c.n} sitios</p>
+                  </div>
+                </Link>
+              ))}
             </div>
           </div>
 
-          {/* Right: foto + quote */}
-          <div className="relative">
-            <div className="relative rounded-3xl overflow-hidden h-80 lg:h-[500px] shadow-2xl">
-              <Image
-                src="/images/original_32884.png"
-                alt="Gastronomía gallega"
-                fill
-                className="object-cover"
-                unoptimized
-              />
-              <div className="absolute inset-0" style={{
-                background: 'linear-gradient(to top, rgba(36,59,96,0.9) 0%, transparent 60%)'
-              }} />
-              <div className="absolute bottom-0 left-0 right-0 p-6">
-                <blockquote className="text-white/90 text-sm italic font-medium mb-2">
+          {/* Derecha — foto */}
+          <div style={{ position: 'relative' }}>
+            <div className="guide-photo" style={{ borderRadius: '1.5rem', overflow: 'hidden', height: 520, position: 'relative' }}>
+              <Image src="/images/original_32884.png" alt="Gastronomía gallega" fill unoptimized style={{ objectFit: 'cover' }} />
+              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(26,45,74,0.92) 0%, rgba(26,45,74,0.1) 55%, transparent 100%)' }} />
+              <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '2rem' }}>
+                <blockquote style={{ color: 'rgba(255,255,255,0.88)', fontSize: '0.92rem', fontStyle: 'italic', margin: '0 0 10px', lineHeight: 1.6 }}>
                   &ldquo;Las recomendaciones de Susana nunca fallan, descubrí un restaurante increíble en Ferrol&rdquo;
                 </blockquote>
-                <p className="text-[#45b0e5] text-xs font-bold">— Seguidora del programa</p>
+                <p style={{ color: '#45b0e5', fontSize: '0.75rem', fontWeight: 700, margin: 0 }}>— Seguidora del programa</p>
               </div>
             </div>
-
-            {/* Badge flotante */}
-            <div className="absolute -top-4 -right-4 hidden lg:flex w-24 h-24 rounded-full items-center justify-center shadow-xl flex-col"
-              style={{ background: '#45b0e5' }}>
-              <span className="text-white text-2xl font-bold" style={{ fontFamily: 'Lilita One, cursive' }}>+30</span>
-              <span className="text-white/80 text-[9px] font-bold uppercase tracking-wide text-center leading-tight">Restaurantes</span>
+            <div className="guide-badge" style={{
+              position: 'absolute', top: -16, right: -16,
+              width: 96, height: 96, borderRadius: '50%', background: '#45b0e5',
+              display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
+              boxShadow: '0 8px 32px rgba(69,176,229,0.35)',
+            }}>
+              <span style={{ fontFamily: 'Lilita One, cursive', color: 'white', fontSize: '1.6rem', lineHeight: 1 }}>+30</span>
+              <span style={{ color: 'rgba(255,255,255,0.8)', fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', textAlign: 'center', lineHeight: 1.3 }}>Restaurantes</span>
             </div>
           </div>
         </div>

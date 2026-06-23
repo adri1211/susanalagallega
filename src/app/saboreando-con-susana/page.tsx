@@ -1,115 +1,97 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
+import Link from 'next/link';
+import { SaboreandoVideos } from '@/components/saboreando/SaboreandoVideos';
+
+export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
   title: 'Saboreando con Susana | El programa de gastronomía gallega',
   description: 'Saboreando con Susana es el programa de gastronomía gallega en TV Ferrol y Canal 33 Madrid. Descubre los mejores restaurantes y productos de Galicia.',
 };
 
-const VIDEOS = [
-  { id: '1yLIB30MFkg', titulo: 'Episodio 1 - Los sabores de Ferrol', desc: 'Susana descubre los mejores rincones gastronómicos de la ciudad naval.' },
-  { id: 'NNzJAOAhFE0', titulo: 'Episodio 2 - Gastronomía gallega', desc: 'Un recorrido por los productos más auténticos de Galicia.' },
-  { id: 'xRRHhJSynD8', titulo: 'Episodio 3 - Los rincones de Galicia', desc: 'Lugares que Susana no puede dejar de recomendar.' },
-];
-
 export default function SaboreandoPage() {
   return (
-    <main className="pt-20">
-      {/* Hero */}
-      <section className="py-20 px-4" style={{ background: '#243b60' }}>
-        <div className="max-w-4xl mx-auto text-center text-white">
-          <span className="section-label text-[#45b0e5]">El programa</span>
-          <h1 className="mt-3 text-4xl sm:text-5xl" style={{ fontFamily: 'Lilita One, cursive' }}>
-            Saboreando con Susana
+    <main>
+
+      {/* ── HERO ── */}
+      <section style={{ background: '#1a2d4a', padding: '8rem 1.5rem 5rem', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', inset: 0, opacity: 0.08 }}>
+          <Image src="/images/original_32874.png" alt="" fill unoptimized style={{ objectFit: 'cover', objectPosition: 'center top' }} />
+        </div>
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(26,45,74,0.7) 0%, #1a2d4a 100%)' }} />
+        <div style={{ maxWidth: 900, margin: '0 auto', textAlign: 'center', position: 'relative' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'rgba(69,176,229,0.12)', border: '1px solid rgba(69,176,229,0.28)', borderRadius: 9999, padding: '7px 18px', marginBottom: 24 }}>
+            <span style={{ color: '#45b0e5', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase' }}>El programa</span>
+          </div>
+          <h1 style={{ fontFamily: 'Lilita One, cursive', color: 'white', fontSize: 'clamp(2.8rem, 7vw, 5rem)', margin: '0 0 1.5rem', lineHeight: 1.05 }}>
+            Saboreando<br />con Susana
           </h1>
-          <p className="mt-5 text-white/80 text-lg max-w-2xl mx-auto leading-relaxed">
-            Nacido en la TV de Ferrol y ahora también en Canal 33 Madrid,
-            <em> Saboreando con Susana</em> es un programa que combina pasión culinaria,
-            productos auténticos y lugares que merecen ser descubiertos.
+          <p style={{ color: 'rgba(255,255,255,0.65)', fontSize: 'clamp(1rem, 1.5vw, 1.15rem)', lineHeight: 1.75, maxWidth: 580, margin: '0 auto 2rem' }}>
+            Nacido en la TV de Ferrol y ahora también en Canal 33 Madrid — el programa que combina pasión culinaria, productos auténticos y lugares que merecen ser descubiertos.
           </p>
-          <div className="flex flex-wrap justify-center gap-4 mt-8">
-            {[
-              { label: '📺 TV Ferrol', sub: 'Canal 34' },
-              { label: '📺 Canal 33 Madrid', sub: 'Madrid' },
-              { label: '▶️ YouTube', sub: 'Online' },
-            ].map(c => (
-              <div key={c.label} className="bg-white/10 border border-white/20 rounded-2xl px-6 py-3 text-center">
-                <div className="text-white font-bold">{c.label}</div>
-                <div className="text-white/50 text-xs">{c.sub}</div>
-              </div>
+          <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '0.75rem' }}>
+            {['📺 TV Ferrol · Canal 34', '📺 Canal 33 Madrid', '▶️ YouTube'].map(c => (
+              <span key={c} style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.82rem', fontWeight: 600, background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 9999, padding: '8px 18px' }}>
+                {c}
+              </span>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Vídeos */}
-      <section className="py-16 px-4" style={{ background: '#F4F3E4' }}>
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-10">
-            <span className="section-label text-[#45b0e5]">Episodios</span>
-            <h2 className="mt-2 text-3xl" style={{ fontFamily: 'Lilita One, cursive', color: '#243b60' }}>
-              Ve los episodios
-            </h2>
+      {/* ── VÍDEOS ── */}
+      <section style={{ background: '#F4F3E4', padding: '5rem 1.5rem' }}>
+        <div style={{ maxWidth: 1100, margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <span style={{ display: 'block', fontFamily: 'Poppins, sans-serif', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#45b0e5', marginBottom: 10 }}>Episodios</span>
+            <h2 style={{ fontFamily: 'Lilita One, cursive', color: '#243b60', fontSize: 'clamp(2rem, 4vw, 2.8rem)', margin: 0 }}>Ve los episodios</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {VIDEOS.map(v => (
-              <div key={v.id} className="card-susana overflow-hidden">
-                <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
-                  <iframe
-                    src={`https://www.youtube.com/embed/${v.id}`}
-                    title={v.titulo}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    className="absolute inset-0 w-full h-full border-0"
-                  />
-                </div>
-                <div className="p-4">
-                  <h3 className="font-bold text-[#243b60] text-sm" style={{ fontFamily: 'Lilita One, cursive' }}>
-                    {v.titulo}
-                  </h3>
-                  <p className="text-[#5a6a7a] text-xs mt-1">{v.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center mt-10">
-            <a
-              href="https://www.youtube.com/@susanalagallega"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primario"
-            >
-              ▶️ Ver todos los vídeos en YouTube →
+          <SaboreandoVideos />
+          <div style={{ textAlign: 'center', marginTop: '2.5rem' }}>
+            <a href="https://www.youtube.com/@susanalagallega" target="_blank" rel="noopener noreferrer" className="btn-azul">
+              ▶️ Ver todos en YouTube →
             </a>
           </div>
         </div>
       </section>
 
-      {/* Sobre Susana */}
-      <section className="py-16 px-4 bg-white">
-        <div className="max-w-3xl mx-auto text-center">
-          <span className="section-label text-[#45b0e5]">Quién soy</span>
-          <h2 className="mt-2 text-3xl" style={{ fontFamily: 'Lilita One, cursive', color: '#243b60' }}>
-            Susana Fernández, La Gallega
-          </h2>
-          <p className="mt-4 text-[#5a6a7a] text-base leading-relaxed">
-            Soy Susana Fernández, aunque todos me conocen como La Gallega. Apasionada de la gastronomía
-            y de descubrir rincones únicos, quiero compartir contigo mi viaje entre fogones, restaurantes
-            y productos con alma.
-          </p>
-          <blockquote className="mt-6 border-l-4 border-[#45b0e5] pl-4 text-left italic text-[#243b60] font-medium">
-            &ldquo;Las recomendaciones de Susana nunca fallan, descubrí un restaurante increíble en Ferrol&rdquo;
-          </blockquote>
-          <a
-            href="https://wa.me/34608756544"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-turquesa mt-8 inline-flex"
-          >
-            Contactar con Susana →
-          </a>
+      {/* ── SOBRE SUSANA ── */}
+      <section style={{ background: '#ffffff', padding: '5rem 1.5rem' }}>
+        <div style={{ maxWidth: 1000, margin: '0 auto' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
+            <div style={{ position: 'relative', borderRadius: '1.5rem', overflow: 'hidden', height: 440 }}>
+              <Image src="/images/original_32853.png" alt="Susana La Gallega" fill unoptimized style={{ objectFit: 'cover' }} />
+            </div>
+            <div>
+              <span style={{ display: 'block', fontFamily: 'Poppins, sans-serif', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#45b0e5', marginBottom: 16 }}>Quién soy</span>
+              <h2 style={{ fontFamily: 'Lilita One, cursive', color: '#243b60', fontSize: 'clamp(1.8rem, 3.5vw, 2.5rem)', margin: '0 0 1.25rem', lineHeight: 1.1 }}>
+                Susana Fernández,<br />La Gallega
+              </h2>
+              <p style={{ color: '#6b7a8d', fontSize: '0.95rem', lineHeight: 1.8, margin: '0 0 1.5rem' }}>
+                Soy Susana Fernández, aunque todos me conocen como La Gallega. Apasionada de la gastronomía y de descubrir rincones únicos, comparto mi viaje entre fogones, restaurantes y productos con alma.
+              </p>
+              <blockquote style={{
+                borderLeft: '3px solid #45b0e5', paddingLeft: '1.25rem',
+                color: '#243b60', fontStyle: 'italic', fontSize: '1rem',
+                fontWeight: 500, margin: '0 0 2rem', lineHeight: 1.65,
+              }}>
+                &ldquo;Las recomendaciones de Susana nunca fallan, descubrí un restaurante increíble en Ferrol&rdquo;
+              </blockquote>
+              <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+                <a href="https://wa.me/34608756544" target="_blank" rel="noopener noreferrer" className="btn-turquesa">
+                  Contactar con Susana
+                </a>
+                <Link href="/colaboraciones" className="btn-outline">
+                  Colaboraciones
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
+
+      <style>{`@media(max-width:768px){.sobre-grid{grid-template-columns:1fr !important;} .sobre-foto{height:280px !important;}}`}</style>
     </main>
   );
 }

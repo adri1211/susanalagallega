@@ -2,68 +2,103 @@
 
 import Link from 'next/link';
 
-const CATEGORIAS = [
-  { slug: 'marisqueria', label: 'Marisquería', emoji: '🦞', color: '#1a4f7a' },
-  { slug: 'pulperia', label: 'Pulpería', emoji: '🐙', color: '#1a4f7a' },
-  { slug: 'parrillada', label: 'Parrillada', emoji: '🥩', color: '#1a4f7a' },
-  { slug: 'taperia', label: 'Tapería', emoji: '🍺', color: '#1a4f7a' },
-  { slug: 'tradicional', label: 'Tradicional', emoji: '🏠', color: '#1a4f7a' },
-  { slug: 'cocina-moderna', label: 'Cocina Moderna', emoji: '✨', color: '#1a4f7a' },
-  { slug: 'bar', label: 'Bar & Café', emoji: '☕', color: '#1a4f7a' },
-  { slug: 'cafeteria', label: 'Cafetería', emoji: '🥐', color: '#1a4f7a' },
+const CATS = [
+  { slug: 'marisqueria', emoji: '🦞', label: 'Marisquería' },
+  { slug: 'pulperia', emoji: '🐙', label: 'Pulpería' },
+  { slug: 'parrillada', emoji: '🥩', label: 'Parrillada' },
+  { slug: 'taperia', emoji: '🍺', label: 'Tapería' },
+  { slug: 'tradicional', emoji: '🏠', label: 'Tradicional' },
+  { slug: 'cocina-moderna', emoji: '✨', label: 'Cocina moderna' },
+  { slug: 'bar', emoji: '☕', label: 'Bar & café' },
+  { slug: 'cafeteria', emoji: '🥐', label: 'Cafetería' },
 ];
 
 export function CategoriesSection() {
   return (
-    <section className="py-16 px-4" style={{ background: '#F4F3E4' }}>
-      <div className="max-w-6xl mx-auto">
+    <section style={{ background: '#ffffff', padding: '5rem 0' }}>
+      <div style={{ maxWidth: 1152, margin: '0 auto', padding: '0 1.5rem' }}>
         {/* Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-10 gap-4">
-          <div>
-            <p className="section-label text-[#45b0e5] mb-1">¿Qué te apetece hoy?</p>
-            <h2 className="text-3xl sm:text-4xl" style={{ fontFamily: 'Lilita One, cursive', color: '#243b60' }}>
-              Elige tu tipo de cocina
-            </h2>
-          </div>
-          <p className="text-[#5a6a7a] text-sm max-w-xs">
-            De la marisquería más fresca a la pulpería más auténtica — todo en un solo lugar.
-          </p>
+        <div style={{ marginBottom: '3rem' }}>
+          <span className="section-label" style={{ color: '#45b0e5', marginBottom: 8, display: 'block' }}>
+            ¿Qué te apetece hoy?
+          </span>
+          <h2 style={{ fontFamily: 'Lilita One, cursive', color: '#243b60', fontSize: 'clamp(2rem, 4vw, 2.8rem)', margin: 0 }}>
+            Elige tu tipo de cocina
+          </h2>
         </div>
 
-        {/* Grid de categorías — estilo tile compacto */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-          {CATEGORIAS.map((cat, i) => (
-            <Link
-              key={cat.slug}
-              href={`/restaurantes?categoria=${cat.slug}`}
-              className="group relative overflow-hidden rounded-2xl p-5 flex flex-col gap-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-              style={{
-                background: i % 2 === 0 ? '#243b60' : 'white',
-                border: i % 2 === 0 ? 'none' : '1.5px solid rgba(36,59,96,0.1)',
-              }}
-            >
-              <span className="text-3xl">{cat.emoji}</span>
-              <div>
-                <p className={`font-bold text-sm leading-tight ${i % 2 === 0 ? 'text-white' : 'text-[#243b60]'}`}
-                  style={{ fontFamily: 'Lilita One, cursive' }}>
+        {/* Grid */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(4, 1fr)',
+          gap: '1rem',
+        }}>
+          {CATS.map((cat, i) => {
+            const dark = i % 3 === 0;
+            return (
+              <Link
+                key={cat.slug}
+                href={`/restaurantes?categoria=${cat.slug}`}
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 12,
+                  padding: '1.5rem',
+                  borderRadius: '1.25rem',
+                  background: dark ? '#243b60' : '#F4F3E4',
+                  border: dark ? 'none' : '1px solid rgba(36,59,96,0.08)',
+                  textDecoration: 'none',
+                  transition: 'transform 0.25s, box-shadow 0.25s',
+                  cursor: 'pointer',
+                  position: 'relative',
+                  overflow: 'hidden',
+                }}
+                onMouseEnter={e => {
+                  (e.currentTarget as HTMLElement).style.transform = 'translateY(-4px)';
+                  (e.currentTarget as HTMLElement).style.boxShadow = dark
+                    ? '0 12px 32px rgba(36,59,96,0.35)'
+                    : '0 12px 32px rgba(36,59,96,0.12)';
+                }}
+                onMouseLeave={e => {
+                  (e.currentTarget as HTMLElement).style.transform = 'translateY(0)';
+                  (e.currentTarget as HTMLElement).style.boxShadow = 'none';
+                }}
+              >
+                <span style={{ fontSize: '2rem', lineHeight: 1 }}>{cat.emoji}</span>
+                <span style={{
+                  fontFamily: 'Lilita One, cursive',
+                  fontSize: '1rem',
+                  color: dark ? '#ffffff' : '#243b60',
+                  lineHeight: 1.2,
+                }}>
                   {cat.label}
-                </p>
-              </div>
-              {/* Hover indicator */}
-              <div className={`absolute bottom-3 right-3 text-xs font-bold opacity-0 group-hover:opacity-100 transition-opacity ${i % 2 === 0 ? 'text-[#45b0e5]' : 'text-[#243b60]'}`}>
-                Ver →
-              </div>
-            </Link>
-          ))}
+                </span>
+                {/* Arrow */}
+                <span style={{
+                  position: 'absolute', bottom: 16, right: 16,
+                  color: dark ? 'rgba(69,176,229,0.7)' : 'rgba(36,59,96,0.25)',
+                  fontSize: '1.1rem', fontWeight: 700,
+                }}>→</span>
+              </Link>
+            );
+          })}
         </div>
 
-        {/* CTA */}
-        <div className="text-center mt-8">
-          <Link href="/restaurantes" className="btn-secundario">
+        <div style={{ textAlign: 'center', marginTop: '2.5rem' }}>
+          <Link href="/restaurantes" className="btn-outline">
             Ver todos los restaurantes →
           </Link>
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 768px) {
+          .cats-grid { grid-template-columns: repeat(2, 1fr) !important; }
+        }
+        @media (max-width: 480px) {
+          .cats-grid { grid-template-columns: repeat(2, 1fr) !important; }
+        }
+      `}</style>
     </section>
   );
 }
