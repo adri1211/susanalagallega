@@ -1,4 +1,5 @@
 import { HeroSection } from '@/components/home/HeroSection';
+import { MediaSection } from '@/components/home/MediaSection';
 import { CategoriesSection } from '@/components/home/CategoriesSection';
 import { FeaturedSection } from '@/components/home/FeaturedSection';
 import { MapTeaser } from '@/components/home/MapTeaser';
@@ -18,6 +19,7 @@ export default async function HomePage() {
   return (
     <>
       <HeroSection />
+      <MediaSection />
       <CategoriesSection />
       <FeaturedSection restaurantes={destacados} />
       <MapTeaser />

@@ -39,15 +39,15 @@ export function Navbar() {
       }`}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 flex-shrink-0">
             <Image
               src="/images/original_32849.svg"
               alt="Susana La Gallega"
-              width={120}
-              height={40}
-              className={`h-10 w-auto transition-all ${solid ? '' : 'brightness-0 invert'}`}
+              width={160}
+              height={54}
+              className={`h-14 w-auto transition-all ${solid ? '' : 'brightness-0 invert'}`}
               priority
               unoptimized
             />
