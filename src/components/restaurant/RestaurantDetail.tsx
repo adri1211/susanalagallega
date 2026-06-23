@@ -161,6 +161,27 @@ export function RestaurantDetail({ restaurant: r, similares }: RestaurantDetailP
           {/* ---- LEFT COLUMN (main content) ---- */}
           <div className="lg:col-span-2 space-y-12">
 
+            {/* Descripción corta como intro — siempre visible */}
+            {r.descripcionCorta && (
+              <section>
+                <p className="text-[#243b60] text-xl leading-relaxed font-medium border-l-4 pl-5" style={{ borderColor: '#45b0e5' }}>
+                  {r.descripcionCorta}
+                </p>
+              </section>
+            )}
+
+            {/* Dirección */}
+            {r.direccion && (
+              <section className="flex items-start gap-3 bg-white rounded-2xl p-5 border border-black/5">
+                <MapPin size={18} className="text-[#45b0e5] mt-0.5 flex-shrink-0" />
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-wider text-[#243b60]/40 mb-0.5">Dirección</p>
+                  <p className="text-[#243b60] font-medium">{r.direccion}</p>
+                  <p className="text-[#6b7a8d] text-sm">{r.localidad}, {r.provincia}</p>
+                </div>
+              </section>
+            )}
+
             {/* La experiencia */}
             {r.experiencia && (
               <motion.section

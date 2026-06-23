@@ -1,8 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import { Navbar } from '@/components/ui/Navbar';
-import { Footer } from '@/components/ui/Footer';
-import { WhatsAppButton } from '@/components/ui/WhatsAppButton';
+import { PublicLayout } from '@/components/ui/PublicLayout';
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://susanalagallega.com'),
@@ -27,10 +25,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="es" className="h-full">
       <body className="min-h-full flex flex-col" style={{ background: '#F4F3E4' }}>
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
-        <WhatsAppButton />
+        <PublicLayout>{children}</PublicLayout>
       </body>
     </html>
   );
