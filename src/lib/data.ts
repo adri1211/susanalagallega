@@ -83,15 +83,16 @@ export async function getRestaurantes(filtros: FiltrosRestaurante = {}): Promise
   const from = (pagina - 1) * porPagina;
   const to = from + porPagina - 1;
 
-  let query = supabase
+  // Use admin client to bypass RLS — activo filter applied manually below
+  const client = createAdminClient();
+  let query = client
     .from('restaurantes')
     .select(
-      'id,slug,nombre,descripcion_corta,categoria,localidad,provincia,imagen_principal,rango_precio,rating,total_reviews,etiquetas,destacado',
+      'id,slug,nombre,descripcion_corta,categoria,localidad,provincia,imagen_principal,rango_precio,rating,total_reviews,etiquetas,destacado,activo',
       { count: 'exact' }
     )
-    .eq('activo', true)
     .order('destacado', { ascending: false })
-    .order('rating', { ascending: false })
+    .order('nombre', { ascending: true })
     .range(from, to);
 
   if (categoria) query = query.eq('categoria', categoria);
@@ -124,11 +125,11 @@ export async function getRestaurantes(filtros: FiltrosRestaurante = {}): Promise
 }
 
 export async function getRestauranteBySlug(slug: string): Promise<Restaurant | null> {
-  const { data, error } = await supabase
+  const client = createAdminClient();
+  const { data, error } = await client
     .from('restaurantes')
     .select('*, galeria(*)')
     .eq('slug', slug)
-    .eq('activo', true)
     .single();
 
   if (error || !data) return null;
@@ -136,10 +137,10 @@ export async function getRestauranteBySlug(slug: string): Promise<Restaurant | n
 }
 
 export async function getDestacados(): Promise<RestaurantCard[]> {
-  const { data } = await supabase
+  const client = createAdminClient();
+  const { data } = await client
     .from('restaurantes')
     .select('id,slug,nombre,descripcion_corta,categoria,localidad,provincia,imagen_principal,rango_precio,rating,total_reviews,etiquetas,destacado')
-    .eq('activo', true)
     .eq('destacado', true)
     .order('rating', { ascending: false })
     .limit(6);
@@ -166,10 +167,10 @@ export async function getRestaurantesSimilares(
   categoria: string,
   limit = 4
 ): Promise<RestaurantCard[]> {
-  const { data } = await supabase
+  const client = createAdminClient();
+  const { data } = await client
     .from('restaurantes')
     .select('id,slug,nombre,descripcion_corta,categoria,localidad,provincia,imagen_principal,rango_precio,rating,total_reviews,etiquetas,destacado')
-    .eq('activo', true)
     .eq('categoria', categoria)
     .neq('id', restauranteId)
     .order('rating', { ascending: false })
