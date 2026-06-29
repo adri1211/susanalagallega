@@ -29,19 +29,24 @@ export function Navbar() {
 
   const solid = scrolled || menuOpen || !isHome;
   const showLargeLogo = isHome && !scrolled && !menuOpen;
+  // Hero es crema → texto siempre oscuro en homepage antes de scroll
+  const navTextColor = solid ? '#243b60' : '#1a2d4a';
+  const burgerColor = solid ? '#243b60' : '#1a2d4a';
 
   return (
     <header style={{
       position: 'fixed', top: 0, left: 0, right: 0, zIndex: 40,
       transition: 'all 0.4s ease',
-      background: solid ? 'white' : 'transparent',
-      boxShadow: solid ? '0 1px 24px rgba(0,0,0,0.08)' : 'none',
+      background: solid ? 'white' : 'rgba(244,243,228,0.85)',
+      backdropFilter: !solid ? 'blur(12px)' : 'none',
+      boxShadow: solid ? '0 1px 24px rgba(0,0,0,0.08)' : '0 1px 0 rgba(36,59,96,0.08)',
     }}>
       {/* ── LOGO GRANDE (solo homepage antes de scroll) ── */}
       {showLargeLogo && (
         <div style={{ display: 'flex', justifyContent: 'center', paddingTop: '1.25rem', paddingBottom: '0.5rem' }}>
           <Link href="/">
-            <Image src="/images/original_32849.svg" alt="Susana La Gallega" width={320} height={110} priority unoptimized style={{ height: 110, width: 'auto', filter: 'brightness(0) invert(1) drop-shadow(0 4px 24px rgba(69,176,229,0.35))' }} />
+            {/* Hero crema: logo en color original (sin filtro) */}
+            <Image src="/images/original_32849.svg" alt="Susana La Gallega" width={320} height={110} priority unoptimized style={{ height: 110, width: 'auto' }} />
           </Link>
         </div>
       )}
@@ -49,10 +54,10 @@ export function Navbar() {
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: showLargeLogo ? 'center' : 'space-between', height: showLargeLogo ? 60 : 76, transition: 'height 0.3s' }}>
 
-          {/* Logo compacto (en scroll o páginas internas) */}
+          {/* Logo compacto */}
           {!showLargeLogo && (
             <Link href="/" style={{ display: 'flex', alignItems: 'center', flexShrink: 0 }}>
-              <Image src="/images/original_32849.svg" alt="Susana La Gallega" width={160} height={54} priority unoptimized style={{ height: 54, width: 'auto', transition: 'all 0.3s' }} />
+              <Image src="/images/original_32849.svg" alt="Susana La Gallega" width={160} height={54} priority unoptimized style={{ height: 54, width: 'auto' }} />
             </Link>
           )}
 
@@ -61,7 +66,7 @@ export function Navbar() {
             {NAV_LINKS.map(link => (
               <Link key={link.href} href={link.href} style={{
                 fontSize: '0.82rem', fontWeight: 700, textDecoration: 'none', transition: 'color 0.2s',
-                color: solid ? '#243b60' : 'rgba(255,255,255,0.9)',
+                color: navTextColor,
                 letterSpacing: '0.01em',
                 borderBottom: pathname === link.href ? '2px solid #45b0e5' : '2px solid transparent',
                 paddingBottom: 2,
@@ -73,7 +78,7 @@ export function Navbar() {
 
           {/* Burger móvil */}
           <button onClick={() => setMenuOpen(!menuOpen)} className="show-mobile"
-            style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 8, color: solid ? '#243b60' : 'white', marginLeft: showLargeLogo ? 0 : 'auto' }}>
+            style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 8, color: burgerColor, marginLeft: showLargeLogo ? 0 : 'auto' }}>
             {menuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
