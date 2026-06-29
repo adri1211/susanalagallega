@@ -41,7 +41,7 @@ export function Navbar() {
       {showLargeLogo && (
         <div style={{ display: 'flex', justifyContent: 'center', paddingTop: '1.25rem', paddingBottom: '0.5rem' }}>
           <Link href="/">
-            <Image src="/images/original_32849.svg" alt="Susana La Gallega" width={320} height={110} priority unoptimized style={{ height: 110, width: 'auto', filter: 'brightness(0) invert(1)', filter: 'drop-shadow(0 4px 24px rgba(69,176,229,0.35)) brightness(0) invert(1)' } as React.CSSProperties} />
+            <Image src="/images/original_32849.svg" alt="Susana La Gallega" width={320} height={110} priority unoptimized style={{ height: 110, width: 'auto', filter: 'brightness(0) invert(1) drop-shadow(0 4px 24px rgba(69,176,229,0.35))' }} />
           </Link>
         </div>
       )}
