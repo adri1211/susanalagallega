@@ -4,6 +4,9 @@ import { StorySection } from '@/components/home/StorySection';
 import { MediaSection } from '@/components/home/MediaSection';
 import { CategoriesSection } from '@/components/home/CategoriesSection';
 import { FeaturedSection } from '@/components/home/FeaturedSection';
+import { GodalbaSection } from '@/components/home/GodalbaSection';
+import { TestimoniosSection } from '@/components/home/TestimoniosSection';
+import { ColaboradoresSection } from '@/components/home/ColaboradoresSection';
 import { MapTeaser } from '@/components/home/MapTeaser';
 import { getDestacados } from '@/lib/data';
 
@@ -19,19 +22,25 @@ export default async function HomePage() {
 
   return (
     <>
-      {/* 1. Susana / Marca personal */}
+      {/* 1. Marca personal */}
       <HeroSection />
       {/* Marquee animado */}
       <MarqueeSection />
-      {/* 2. El programa de TV */}
+      {/* 2. El programa */}
       <StorySection />
-      {/* 3. Me habrás visto en */}
+      {/* 3. Medios */}
       <MediaSection />
-      {/* 4. Explorar por categoría */}
+      {/* 4. Categorías restaurantes */}
       <CategoriesSection />
       {/* 5. Restaurantes destacados */}
       <FeaturedSection restaurantes={destacados} />
-      {/* 6. Guía descargable */}
+      {/* 6. Mar de Godalba + Hostal */}
+      <GodalbaSection />
+      {/* 7. Testimonios */}
+      <TestimoniosSection />
+      {/* 8. Colaboradores */}
+      <ColaboradoresSection />
+      {/* 9. Guía descargable */}
       <MapTeaser />
     </>
   );
