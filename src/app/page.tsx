@@ -1,6 +1,8 @@
 import { HeroSection } from '@/components/home/HeroSection';
 import { MarqueeSection } from '@/components/home/MarqueeSection';
 import { StorySection } from '@/components/home/StorySection';
+import { CinematicSection } from '@/components/home/CinematicSection';
+import { StatsSection } from '@/components/home/StatsSection';
 import { MediaSection } from '@/components/home/MediaSection';
 import { CategoriesSection } from '@/components/home/CategoriesSection';
 import { FeaturedSection } from '@/components/home/FeaturedSection';
@@ -22,25 +24,29 @@ export default async function HomePage() {
 
   return (
     <>
-      {/* 1. Marca personal */}
+      {/* 1. Marca personal — hero inmersivo */}
       <HeroSection />
-      {/* Marquee animado */}
+      {/* 2. Marquee animado */}
       <MarqueeSection />
-      {/* 2. El programa */}
+      {/* 3. El programa TV */}
       <StorySection />
-      {/* 3. Medios */}
+      {/* 4. Sección cinematográfica — cita + parallax */}
+      <CinematicSection />
+      {/* 5. Stats animados */}
+      <StatsSection />
+      {/* 6. Medios */}
       <MediaSection />
-      {/* 4. Categorías restaurantes */}
+      {/* 7. Categorías inmersivas */}
       <CategoriesSection />
-      {/* 5. Restaurantes destacados */}
+      {/* 8. Restaurantes destacados */}
       <FeaturedSection restaurantes={destacados} />
-      {/* 6. Mar de Godalba + Hostal */}
+      {/* 9. Mar de Godalba + Hostal */}
       <GodalbaSection />
-      {/* 7. Testimonios */}
+      {/* 10. Testimonios */}
       <TestimoniosSection />
-      {/* 8. Colaboradores */}
+      {/* 11. Colaboradores */}
       <ColaboradoresSection />
-      {/* 9. Guía descargable */}
+      {/* 12. Guía descargable */}
       <MapTeaser />
     </>
   );
