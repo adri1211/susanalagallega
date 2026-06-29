@@ -9,10 +9,10 @@ export function HeroSection() {
     <section style={{ background: '#1a2d4a', minHeight: '100vh', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'stretch' }}>
       <style>{`
         .hero-photo-wrap { position: absolute; right: 0; top: 0; bottom: 0; width: 50%; }
-        .hero-content { width: 55%; position: relative; z-index: 10; display: flex; flex-direction: column; justify-content: center; padding: 8rem 3rem 5rem 5rem; }
+        .hero-content { width: 55%; position: relative; z-index: 10; display: flex; flex-direction: column; justify-content: center; padding: 11rem 3rem 5rem 5rem; }
         @media(max-width:1024px){
           .hero-photo-wrap { width: 100%; opacity: 0.18; }
-          .hero-content { width: 100%; padding: 7rem 1.5rem 5rem; text-align: center; align-items: center; }
+          .hero-content { width: 100%; padding: 10rem 1.5rem 5rem; text-align: center; align-items: center; }
           .hero-ctas { justify-content: center !important; }
           .hero-chips { justify-content: center !important; }
         }

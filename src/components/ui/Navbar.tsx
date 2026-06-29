@@ -39,15 +39,15 @@ export function Navbar() {
     }}>
       {/* ── LOGO GRANDE (solo homepage antes de scroll) ── */}
       {showLargeLogo && (
-        <div style={{ display: 'flex', justifyContent: 'center', paddingTop: '1.25rem', paddingBottom: '0.5rem' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', paddingTop: '1.5rem', paddingBottom: '0.75rem' }}>
           <Link href="/">
-            <Image src="/images/original_32849.svg" alt="Susana La Gallega" width={200} height={68} priority unoptimized style={{ height: 68, width: 'auto', filter: 'brightness(0) invert(1)' }} />
+            <Image src="/images/original_32849.svg" alt="Susana La Gallega" width={260} height={88} priority unoptimized style={{ height: 88, width: 'auto', filter: 'brightness(0) invert(1)' }} />
           </Link>
         </div>
       )}
 
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 1.5rem' }}>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: showLargeLogo ? 'center' : 'space-between', height: showLargeLogo ? 48 : 76, transition: 'height 0.3s' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: showLargeLogo ? 'center' : 'space-between', height: showLargeLogo ? 52 : 76, transition: 'height 0.3s' }}>
 
           {/* Logo compacto (en scroll o páginas internas) */}
           {!showLargeLogo && (
