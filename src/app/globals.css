@@ -139,6 +139,35 @@ h1, h2, h3, h4 { font-family: 'Lilita One', cursive; }
 .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 
-/* Animaciones */
-@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+/* ── Animaciones globales ── */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideLeft { from { opacity: 0; transform: translateX(-32px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes slideRight { from { opacity: 0; transform: translateX(32px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes scaleIn { from { opacity: 0; transform: scale(0.92); } to { opacity: 1; transform: scale(1); } }
+@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+/* Hero entrance animations */
+.hero-badge { animation: fadeIn 0.6s ease both; }
+.hero-eyebrow { animation: fadeUp 0.6s 0.1s ease both; }
+.hero-title { animation: fadeUp 0.7s 0.2s ease both; }
+.hero-tagline { animation: fadeUp 0.7s 0.35s ease both; }
+.hero-bio { animation: fadeUp 0.7s 0.48s ease both; }
+.hero-ctas { animation: fadeUp 0.7s 0.6s ease both; }
+.hero-chips { animation: fadeUp 0.7s 0.72s ease both; }
+
+/* Section reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* Cards interactivas */
+.card-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.card-lift:hover { transform: translateY(-8px); box-shadow: 0 20px 56px rgba(36,59,96,0.16); }
+
+/* Glow effect */
+.glow-turquesa { box-shadow: 0 0 24px rgba(69,176,229,0.4); }
+.glow-turquesa:hover { box-shadow: 0 0 40px rgba(69,176,229,0.6); }

@@ -13,89 +13,92 @@ const NAV_LINKS = [
   { label: 'Contacto', href: '/contacto' },
 ];
 
-// Pages where navbar can start transparent (they have a full-screen hero)
 const HERO_PAGES = ['/'];
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
-
-  const hasHero = HERO_PAGES.includes(pathname);
+  const isHome = HERO_PAGES.includes(pathname);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
+    const onScroll = () => setScrolled(window.scrollY > 80);
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // Solid when: scrolled, menu open, or page doesn't have a hero
-  const solid = scrolled || menuOpen || !hasHero;
+  const solid = scrolled || menuOpen || !isHome;
+  const showLargeLogo = isHome && !scrolled && !menuOpen;
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-        solid ? 'bg-white shadow-sm' : 'bg-transparent'
-      }`}
-    >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 flex-shrink-0">
-            <Image
-              src="/images/original_32849.svg"
-              alt="Susana La Gallega"
-              width={160}
-              height={54}
-              className={`h-14 w-auto transition-all ${solid ? '' : 'brightness-0 invert'}`}
-              priority
-              unoptimized
-            />
+    <header style={{
+      position: 'fixed', top: 0, left: 0, right: 0, zIndex: 40,
+      transition: 'all 0.4s ease',
+      background: solid ? 'white' : 'transparent',
+      boxShadow: solid ? '0 1px 24px rgba(0,0,0,0.08)' : 'none',
+    }}>
+      {/* ── LOGO GRANDE (solo homepage antes de scroll) ── */}
+      {showLargeLogo && (
+        <div style={{ display: 'flex', justifyContent: 'center', paddingTop: '1.25rem', paddingBottom: '0.5rem' }}>
+          <Link href="/">
+            <Image src="/images/original_32849.svg" alt="Susana La Gallega" width={200} height={68} priority unoptimized style={{ height: 68, width: 'auto', filter: 'brightness(0) invert(1)' }} />
           </Link>
+        </div>
+      )}
 
-          {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-5 lg:gap-7">
+      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 1.5rem' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: showLargeLogo ? 'center' : 'space-between', height: showLargeLogo ? 48 : 76, transition: 'height 0.3s' }}>
+
+          {/* Logo compacto (en scroll o páginas internas) */}
+          {!showLargeLogo && (
+            <Link href="/" style={{ display: 'flex', alignItems: 'center', flexShrink: 0 }}>
+              <Image src="/images/original_32849.svg" alt="Susana La Gallega" width={160} height={54} priority unoptimized style={{ height: 54, width: 'auto', transition: 'all 0.3s' }} />
+            </Link>
+          )}
+
+          {/* Nav desktop */}
+          <nav style={{ display: 'flex', alignItems: 'center', gap: showLargeLogo ? '2rem' : '1.5rem' }} className="hide-mobile">
             {NAV_LINKS.map(link => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`text-sm font-semibold transition-colors hover:text-[#45b0e5] ${
-                  solid ? 'text-[#243b60]' : 'text-white drop-shadow'
-                } ${pathname === link.href ? 'text-[#45b0e5]' : ''}`}
-              >
+              <Link key={link.href} href={link.href} style={{
+                fontSize: '0.82rem', fontWeight: 700, textDecoration: 'none', transition: 'color 0.2s',
+                color: solid ? '#243b60' : 'rgba(255,255,255,0.9)',
+                letterSpacing: '0.01em',
+                borderBottom: pathname === link.href ? '2px solid #45b0e5' : '2px solid transparent',
+                paddingBottom: 2,
+              }}>
                 {link.label}
               </Link>
             ))}
           </nav>
 
-          {/* Mobile toggle */}
-          <button
-            className={`md:hidden p-2 rounded-lg transition-colors ${solid ? 'text-[#243b60]' : 'text-white'}`}
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Menú"
-          >
-            {menuOpen ? <X size={22} /> : <Menu size={22} />}
+          {/* Burger móvil */}
+          <button onClick={() => setMenuOpen(!menuOpen)} className="show-mobile"
+            style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 8, color: solid ? '#243b60' : 'white', marginLeft: showLargeLogo ? 0 : 'auto' }}>
+            {menuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
-        {/* Mobile menu */}
+        {/* Menú móvil */}
         {menuOpen && (
-          <div className="md:hidden bg-white border-t border-gray-100 py-4 space-y-1 shadow-lg">
+          <div style={{ background: 'white', borderTop: '1px solid rgba(36,59,96,0.08)', padding: '1rem 0' }}>
             {NAV_LINKS.map(link => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setMenuOpen(false)}
-                className={`block px-4 py-3 font-semibold text-sm rounded-xl hover:bg-[#C7E7F4] transition-colors ${
-                  pathname === link.href ? 'text-[#45b0e5] bg-[#C7E7F4]' : 'text-[#243b60]'
-                }`}
-              >
+              <Link key={link.href} href={link.href} onClick={() => setMenuOpen(false)}
+                style={{ display: 'block', padding: '0.75rem 1rem', fontWeight: 700, fontSize: '0.9rem', color: pathname === link.href ? '#45b0e5' : '#243b60', textDecoration: 'none', borderRadius: '0.5rem' }}>
                 {link.label}
               </Link>
             ))}
           </div>
         )}
       </div>
+
+      <style>{`
+        .hide-mobile { display: flex !important; }
+        .show-mobile { display: none !important; }
+        @media(max-width: 768px) {
+          .hide-mobile { display: none !important; }
+          .show-mobile { display: flex !important; }
+        }
+      `}</style>
     </header>
   );
 }

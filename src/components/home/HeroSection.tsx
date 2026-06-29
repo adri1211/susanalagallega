@@ -30,26 +30,26 @@ export function HeroSection() {
       {/* Contenido */}
       <div className="hero-content">
         {/* Badge */}
-        <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'rgba(69,176,229,0.12)', border: '1px solid rgba(69,176,229,0.3)', borderRadius: 9999, padding: '7px 18px', marginBottom: '2rem', alignSelf: 'flex-start' }}>
+        <div className="hero-badge" style={{ display: 'inline-flex', alignSelf: 'flex-start', alignItems: 'center', gap: 8, background: 'rgba(69,176,229,0.12)', border: '1px solid rgba(69,176,229,0.3)', borderRadius: 9999, padding: '7px 18px', marginBottom: '2rem' }}>
           <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#45b0e5', animation: 'pulse 2s infinite', display: 'block' }} />
           <span style={{ color: '#45b0e5', fontWeight: 700, fontSize: '0.62rem', letterSpacing: '0.15em', textTransform: 'uppercase' }}>El programa de gastronomía gallega</span>
         </div>
 
         {/* Intro */}
-        <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.9rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', margin: '0 0 0.4rem' }}>Soy Susana Fernández</p>
+        <p className="hero-eyebrow" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.9rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', margin: '0 0 0.4rem' }}>Soy Susana Fernández</p>
 
         {/* Nombre grande */}
-        <h1 style={{ fontFamily: 'Lilita One, cursive', color: 'white', fontSize: 'clamp(3.2rem, 6vw, 5.5rem)', lineHeight: 0.95, margin: '0 0 0.6rem' }}>
+        <h1 className="hero-title" style={{ fontFamily: 'Lilita One, cursive', color: 'white', fontSize: 'clamp(3.2rem, 6vw, 5.5rem)', lineHeight: 0.95, margin: '0 0 0.6rem' }}>
           La Gallega
         </h1>
 
         {/* Tagline */}
-        <p style={{ fontFamily: 'Lilita One, cursive', color: '#45b0e5', fontSize: 'clamp(1.4rem, 2.5vw, 2.2rem)', margin: '0 0 1.75rem', lineHeight: 1.2 }}>
+        <p className="hero-tagline" style={{ fontFamily: 'Lilita One, cursive', color: '#45b0e5', fontSize: 'clamp(1.4rem, 2.5vw, 2.2rem)', margin: '0 0 1.75rem', lineHeight: 1.2 }}>
           ¡Historias que se comen!
         </p>
 
         {/* Bio */}
-        <p style={{ color: 'rgba(255,255,255,0.62)', fontSize: 'clamp(0.9rem, 1.2vw, 1rem)', lineHeight: 1.8, maxWidth: 480, margin: '0 0 2.5rem' }}>
+        <p className="hero-bio" style={{ color: 'rgba(255,255,255,0.62)', fontSize: 'clamp(0.9rem, 1.2vw, 1rem)', lineHeight: 1.8, maxWidth: 480, margin: '0 0 2.5rem' }}>
           Apasionada de la gastronomía gallega, presentadora de <strong style={{ color: 'rgba(255,255,255,0.85)' }}>Saboreando con Susana</strong> en TV Ferrol y Canal 33 Madrid. Aquí comparto mis restaurantes favoritos y todo lo que me enamora de la mesa gallega.
         </p>
 

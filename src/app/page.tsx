@@ -1,4 +1,5 @@
 import { HeroSection } from '@/components/home/HeroSection';
+import { MarqueeSection } from '@/components/home/MarqueeSection';
 import { StorySection } from '@/components/home/StorySection';
 import { MediaSection } from '@/components/home/MediaSection';
 import { CategoriesSection } from '@/components/home/CategoriesSection';
@@ -20,6 +21,8 @@ export default async function HomePage() {
     <>
       {/* 1. Susana / Marca personal */}
       <HeroSection />
+      {/* Marquee animado */}
+      <MarqueeSection />
       {/* 2. El programa de TV */}
       <StorySection />
       {/* 3. Me habrás visto en */}
