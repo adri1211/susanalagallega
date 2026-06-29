@@ -1,56 +1,70 @@
+'use client';
+import { useEffect, useRef } from 'react';
+
 const LOGOS = [
-  {
-    svg: `<svg viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="30" r="22" fill="#FF6600"/><path d="M30 12 L30 48 M18 20 L42 20 M15 30 L45 30 M18 40 L42 40" stroke="white" stroke-width="3" fill="none"/><text x="62" y="25" font-family="Arial" font-weight="900" font-size="13" fill="#FF6600">Antena</text><text x="62" y="43" font-family="Arial" font-weight="900" font-size="16" fill="#FF6600">3</text></svg>`,
-    alt: 'Antena 3',
-  },
-  {
-    svg: `<svg viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="30" r="26" fill="#0057A8"/><text x="50" y="38" font-family="Arial" font-weight="900" font-size="30" fill="white" text-anchor="middle">5</text></svg>`,
-    alt: 'Telecinco',
-  },
-  {
-    svg: `<svg viewBox="0 0 130 60" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="10" width="126" height="40" rx="6" fill="#003087"/><text x="65" y="37" font-family="Arial" font-weight="900" font-size="20" fill="white" text-anchor="middle">COPE</text></svg>`,
-    alt: 'COPE',
-  },
-  {
-    svg: `<svg viewBox="0 0 150 60" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="146" height="56" rx="6" fill="#1a2d4a" stroke="#45b0e5" stroke-width="2"/><text x="75" y="28" font-family="Arial" font-weight="900" font-size="11" fill="#45b0e5" text-anchor="middle">TELE SUR</text><text x="75" y="48" font-family="Arial" font-weight="900" font-size="14" fill="white" text-anchor="middle">MADRID</text></svg>`,
-    alt: 'Tele Sur Madrid',
-  },
+  { label: 'Antena 3', color: '#FF6600', bg: '#fff5f0', text: 'A3' },
+  { label: 'Telecinco', color: '#0057A8', bg: '#f0f5ff', text: '5' },
+  { label: 'COPE', color: '#003087', bg: '#f0f4ff', text: 'COPE' },
+  { label: 'Tele Sur', sub: 'Madrid', color: '#1a2d4a', bg: '#1a2d4a', textColor: '#45b0e5' },
+  { label: 'TV Ferrol', sub: 'Canal 34', color: '#243b60', bg: '#243b60', textColor: 'white' },
+  { label: 'YouTube', sub: '@susanalagallega', color: '#FF0000', bg: '#1a1a1a', textColor: 'white' },
 ];
 
 export function MediaSection() {
-  return (
-    <section style={{ background: '#C7E7F4', padding: '4rem 1.5rem', position: 'relative', overflow: 'hidden' }}>
-      {/* Fondo azulejos sutil */}
-      <div style={{ position: 'absolute', inset: 0, opacity: 0.06, backgroundImage: 'radial-gradient(circle, #243b60 1px, transparent 1px)', backgroundSize: '28px 28px' }} />
+  const ref = useRef<HTMLElement>(null);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const cards = el.querySelectorAll('.media-card-reveal');
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { (e.target as HTMLElement).style.opacity = '1'; (e.target as HTMLElement).style.transform = 'translateY(0) scale(1)'; } });
+    }, { threshold: 0.1 });
+    cards.forEach(c => obs.observe(c));
+    return () => obs.disconnect();
+  }, []);
 
-      <div style={{ maxWidth: 960, margin: '0 auto', position: 'relative', textAlign: 'center' }}>
-        <p style={{ fontFamily: 'Poppins, sans-serif', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(36,59,96,0.5)', marginBottom: '0.75rem' }}>
+  return (
+    <section ref={ref} style={{ background: 'linear-gradient(180deg, #C7E7F4 0%, #daeef8 100%)', padding: '5.5rem 1.5rem', position: 'relative', overflow: 'hidden' }}>
+      {/* Patrón de fondo */}
+      <div style={{ position: 'absolute', inset: 0, opacity: 0.04, backgroundImage: 'radial-gradient(circle, #243b60 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
+
+      <div style={{ maxWidth: 1000, margin: '0 auto', position: 'relative', textAlign: 'center' }}>
+        <p style={{ fontFamily: 'Poppins, sans-serif', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'rgba(36,59,96,0.45)', marginBottom: '0.75rem' }}>
           Presencia en medios
         </p>
-        <h2 style={{ fontFamily: 'Lilita One, cursive', color: '#243b60', fontSize: 'clamp(2rem, 4vw, 3rem)', margin: '0 0 2.5rem', lineHeight: 1.1 }}>
+        <h2 style={{ fontFamily: 'Lilita One, cursive', color: '#1a2d4a', fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)', margin: '0 0 0.75rem', lineHeight: 1.05 }}>
           Me habrás visto en…
         </h2>
+        <p style={{ fontFamily: 'Poppins, sans-serif', color: 'rgba(36,59,96,0.55)', fontSize: '0.95rem', margin: '0 0 3.5rem', maxWidth: 400, marginLeft: 'auto', marginRight: 'auto' }}>
+          Televisión, radio y redes — Susana lleva la gastronomía gallega a todos los rincones
+        </p>
 
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap', gap: '1.25rem' }}>
-          {LOGOS.map(logo => (
-            <div key={logo.alt} style={{
-              background: 'white', borderRadius: '1.25rem',
-              padding: '1.25rem 1.75rem', width: 170, height: 90,
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
-              boxShadow: '0 4px 20px rgba(36,59,96,0.1)',
-              transition: 'transform 0.25s, box-shadow 0.25s',
-            }}
-              className="media-logo-card"
-            >
-              <div dangerouslySetInnerHTML={{ __html: logo.svg }} style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }} />
-            </div>
-          ))}
+          {LOGOS.map((logo, i) => {
+            const isDark = !!logo.bg && (logo.bg === '#1a2d4a' || logo.bg === '#243b60' || logo.bg === '#1a1a1a');
+            return (
+              <div key={logo.label} className="media-card-reveal" style={{
+                background: logo.bg || 'white',
+                borderRadius: '1.5rem',
+                padding: '1.5rem 2rem',
+                minWidth: 150, minHeight: 90,
+                display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 4,
+                boxShadow: isDark ? '0 8px 32px rgba(0,0,0,0.25)' : '0 6px 28px rgba(36,59,96,0.1)',
+                opacity: 0,
+                transform: 'translateY(24px) scale(0.95)',
+                transition: `opacity 0.6s ${i * 80}ms ease, transform 0.6s ${i * 80}ms ease`,
+                cursor: 'default',
+              }}>
+                <span style={{ fontFamily: 'Lilita One, cursive', fontSize: logo.text === 'COPE' ? '1.4rem' : logo.text === '5' ? '2rem' : logo.text === 'A3' ? '1.6rem' : '1.1rem', color: logo.textColor || logo.color, lineHeight: 1 }}>
+                  {logo.text || logo.label}
+                </span>
+                {logo.sub && <span style={{ fontFamily: 'Poppins, sans-serif', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: logo.textColor ? 'rgba(255,255,255,0.55)' : 'rgba(36,59,96,0.45)' }}>{logo.sub}</span>}
+                {!logo.text && !logo.sub && <span style={{ fontFamily: 'Poppins, sans-serif', fontSize: '0.7rem', fontWeight: 700, color: 'rgba(36,59,96,0.5)' }}>{logo.label}</span>}
+              </div>
+            );
+          })}
         </div>
       </div>
-
-      <style>{`
-        .media-logo-card:hover { transform: translateY(-6px) scale(1.04); box-shadow: 0 12px 32px rgba(36,59,96,0.18) !important; }
-      `}</style>
     </section>
   );
 }

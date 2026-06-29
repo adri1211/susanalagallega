@@ -144,30 +144,45 @@ h1, h2, h3, h4 { font-family: 'Lilita One', cursive; }
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 @keyframes slideLeft { from { opacity: 0; transform: translateX(-32px); } to { opacity: 1; transform: translateX(0); } }
 @keyframes slideRight { from { opacity: 0; transform: translateX(32px); } to { opacity: 1; transform: translateX(0); } }
-@keyframes scaleIn { from { opacity: 0; transform: scale(0.92); } to { opacity: 1; transform: scale(1); } }
-@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes scaleIn { from { opacity: 0; transform: scale(0.88); } to { opacity: 1; transform: scale(1); } }
+@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+@keyframes shimmer { 0% { background-position: -200% center; } 100% { background-position: 200% center; } }
+@keyframes spin-slow { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
-/* Hero entrance animations */
-.hero-badge { animation: fadeIn 0.6s ease both; }
-.hero-eyebrow { animation: fadeUp 0.6s 0.1s ease both; }
-.hero-title { animation: fadeUp 0.7s 0.2s ease both; }
-.hero-tagline { animation: fadeUp 0.7s 0.35s ease both; }
-.hero-bio { animation: fadeUp 0.7s 0.48s ease both; }
-.hero-ctas { animation: fadeUp 0.7s 0.6s ease both; }
-.hero-chips { animation: fadeUp 0.7s 0.72s ease both; }
-
-/* Section reveal */
+/* Section reveal — suave y profundo */
 .reveal {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transform: translateY(36px);
+  transition: opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1), transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-left { opacity: 0; transform: translateX(-40px); transition: opacity 0.85s cubic-bezier(0.22,1,0.36,1), transform 0.85s cubic-bezier(0.22,1,0.36,1); }
+.reveal-left.visible { opacity: 1; transform: translateX(0); }
+.reveal-scale { opacity: 0; transform: scale(0.9); transition: opacity 0.85s cubic-bezier(0.22,1,0.36,1), transform 0.85s cubic-bezier(0.22,1,0.36,1); }
+.reveal-scale.visible { opacity: 1; transform: scale(1); }
 
-/* Cards interactivas */
-.card-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
-.card-lift:hover { transform: translateY(-8px); box-shadow: 0 20px 56px rgba(36,59,96,0.16); }
+/* Cards interactivas — más dramáticas */
+.card-lift { transition: transform 0.35s cubic-bezier(0.22,1,0.36,1), box-shadow 0.35s ease; }
+.card-lift:hover { transform: translateY(-10px) scale(1.02); box-shadow: 0 24px 64px rgba(36,59,96,0.18); }
 
-/* Glow effect */
-.glow-turquesa { box-shadow: 0 0 24px rgba(69,176,229,0.4); }
-.glow-turquesa:hover { box-shadow: 0 0 40px rgba(69,176,229,0.6); }
+/* Glow turquesa */
+.glow-turquesa { box-shadow: 0 0 28px rgba(69,176,229,0.35); }
+.glow-turquesa:hover { box-shadow: 0 0 48px rgba(69,176,229,0.6); }
+
+/* Texto con gradiente animado */
+.text-shimmer {
+  background: linear-gradient(90deg, #45b0e5 0%, #ffffff 40%, #45b0e5 80%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+/* Separador decorativo */
+.section-divider { width: 60px; height: 4px; background: linear-gradient(90deg, #45b0e5, #1a2d4a); border-radius: 2px; margin: 0 auto 2rem; }
+
+/* Hover underline animado para nav */
+.nav-link-animated { position: relative; }
+.nav-link-animated::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: #45b0e5; transition: width 0.3s ease; }
+.nav-link-animated:hover::after { width: 100%; }
