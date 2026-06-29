@@ -9,7 +9,7 @@ export function HeroSection() {
     <section style={{ background: '#F4F3E4', minHeight: '100vh', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'stretch' }}>
       <style>{`
         .hero-photo-wrap { position: absolute; right: 0; top: 0; bottom: 0; width: 52%; }
-        .hero-content { width: 56%; position: relative; z-index: 10; display: flex; flex-direction: column; justify-content: center; padding: 12rem 3rem 6rem 5rem; }
+        .hero-content { width: 56%; position: relative; z-index: 10; display: flex; flex-direction: column; justify-content: center; padding: 15rem 3rem 6rem 5rem; }
 
         @keyframes bounce-cue { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(-10px)} }
         @keyframes dot-pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.3;transform:scale(0.7)} }
@@ -30,7 +30,7 @@ export function HeroSection() {
 
         @media(max-width:1024px){
           .hero-photo-wrap{ width:100%; opacity:0.12; }
-          .hero-content{ width:100%; padding:11rem 1.5rem 5rem; text-align:center; align-items:center; }
+          .hero-content{ width:100%; padding:14rem 1.5rem 5rem; text-align:center; align-items:center; }
           .hero-ctas{ justify-content:center !important; }
           .hero-chips{ justify-content:center !important; }
         }
@@ -47,7 +47,7 @@ export function HeroSection() {
 
       {/* Foto Susana */}
       <div className="hero-photo-wrap" style={{ zIndex:2 }}>
-        <Image src="/images/original_32874.png" alt="Susana La Gallega" fill priority unoptimized style={{ objectFit:'cover', objectPosition:'center top' }} />
+        <Image src="/images/original_32874.png" alt="Susana La Gallega" fill priority unoptimized style={{ objectFit:'cover', objectPosition:'center 15%' }} />
         <div style={{ position:'absolute', inset:0, background:'linear-gradient(to right, #F4F3E4 0%, #F4F3E4 4%, rgba(244,243,228,0.65) 35%, rgba(244,243,228,0.1) 65%, rgba(244,243,228,0) 100%)' }} />
         <div style={{ position:'absolute', inset:0, background:'linear-gradient(to top, #F4F3E4 0%, transparent 40%)' }} />
       </div>
