@@ -1,6 +1,21 @@
 import type { Metadata } from 'next';
+import { Poppins, Lilita_One } from 'next/font/google';
 import './globals.css';
 import { PublicLayout } from '@/components/ui/PublicLayout';
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-poppins',
+  display: 'swap',
+});
+
+const lilitaOne = Lilita_One({
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--font-lilita',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://susanalagallega.com'),
@@ -23,7 +38,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es" className="h-full">
+    <html lang="es" className={`h-full ${poppins.variable} ${lilitaOne.variable}`}>
       <body className="min-h-full flex flex-col" style={{ background: '#F4F3E4' }}>
         <PublicLayout>{children}</PublicLayout>
       </body>

@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Lilita+One&display=swap');
 
 :root {
   --azul: #243b60;
@@ -19,17 +18,17 @@ html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
 body {
   background: var(--blanco);
   color: var(--azul);
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
   overflow-x: hidden;
 }
 
-h1, h2, h3, h4 { font-family: 'Lilita One', cursive; }
+h1, h2, h3, h4 { font-family: var(--font-lilita), 'Lilita One', cursive; }
 
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: var(--crema); }
 ::-webkit-scrollbar-thumb { background: var(--turquesa); border-radius: 2px; }
 
-.font-display { font-family: 'Lilita One', cursive; }
+.font-display { font-family: var(--font-lilita), 'Lilita One', cursive; }
 
 /* Botones */
 .btn-azul {
