@@ -52,7 +52,7 @@ export function CategoriesSection() {
             <Link key={cat.slug} href={`/restaurantes?categoria=${cat.slug}`} className="cat-item"
               style={{
                 display: 'flex', flexDirection: 'column', justifyContent: 'flex-end',
-                height: i === 0 || i === 5 ? 240 : 190,
+                height: 210,
                 borderRadius: '1.5rem', overflow: 'hidden', textDecoration: 'none',
                 position: 'relative', background: cat.color,
                 opacity: 0, transform: 'translateY(24px) scale(0.97)',
