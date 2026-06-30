@@ -91,17 +91,21 @@ Siguiendo el ejemplo de personas como Álvaro es como la gastronomía gallega si
  FALSE, TRUE),
 
 ('gastronomia-supervivientes',
- 'Gastronomía y Supervivientes: cuando la comida gallega se convierte en un lujo',
- 'Los concursantes de Supervivientes sueñan con los platos de su tierra. Yo solo podría sobrevivir con pulpo, empanada y un buen Albariño. ¿Y vosotros?',
- 'Viendo Supervivientes no puedo evitar pensar en lo afortunados que somos los gallegos con nuestra gastronomía.
+ 'Susi de Valdoviño: la hostelera de Ferrolterra que sobrevivió en África',
+ 'Susi Pérez-Castrillón, vecina de Valdoviño y propietaria del restaurante O Barco, acaba de regresar de participar en Aventura en África (Antena 3). Doce kilos menos, picaduras de mosquito y un león rondando su tienda. Una historia de supervivencia real.',
+ 'Susi Pérez-Castrillón es una ferrolana vecina de Valdoviño que acaba de regresar de un viaje a África. Pero lo suyo no ha sido un paquete turístico cualquiera, sino una auténtica epopeya.
 
-Mientras los concursantes sueñan con cualquier cosa que comer, yo soñaría con un buen pulpo á feira, unas zamburiñas a la plancha o un caldo gallego bien caliente. Porque la cocina gallega es, sin duda, de las más completas y satisfactorias del mundo.
+Susi participó en el programa Aventura en África, que emite Antena 3 desde Kenia, presentado por la también ferrolana Paula Vázquez. Es un espacio de supervivencia en el que los concursantes deben vérselas con una naturaleza salvaje y desconocida, además de la escasez de todo, incluidos los alimentos.
 
-Esta reflexión me llevó a pensar: ¿qué platos gallegos te llevarías a una isla desierta? Cuéntamelo en los comentarios. Por mi parte, no dudaría: pulpo, empanada y una buena botella de Mar de Godalba. ¡Supervivencia de lujo!
+Susi aguantó desde el 12 de enero hasta el pasado domingo, cuando se presentó voluntaria para ser expulsada. Y el público la mandó a casa, aunque sigue apareciendo en Antena 3. Compagina de momento esa presencia televisiva con la atención a su restaurante, O Barco, situado muy cerca de Valdoviño, en la carretera de Cedeira.
 
-La gastronomía gallega no es solo comida, es cultura, es identidad, es hogar. Y cuando estás lejos, es lo que más echas de menos.',
- 'lifestyle',
- ARRAY['supervivientes','gastronomia gallega','lifestyle','opinion','galicia'],
+La joven confiesa que ha regresado «hecha polvo» y que ha adelgazado doce kilos. Asegura que las penurias que pasan los concursantes en la pantalla son auténticas: «el programa es totalmente real». «Tengo picaduras de mosquitos por todas partes, dormíamos rodeados de escorpiones, un león merodeaba durante la noche...».
+
+Pese a todo, asegura que la aventura ha valido la pena, por ser una experiencia nueva y porque le ha permitido valorar lo que tiene. Además de tomar conciencia sobre las desigualdades del mundo. En Kenia, explica, hay mucha pobreza, aunque ello no impide que la gente sea bastante feliz.
+
+Una historia de valentía, superación y raíces gallegas que nos enorgullece compartir desde Ferrolterra.',
+ 'ferrolterra',
+ ARRAY['ferrolterra','supervivencia','antena3','aventura en africa','hosteleria','valdovino','restaurante o barco'],
  'https://share.google/4TQvTtIOqgQG4YDwC',
  'web',
  FALSE, TRUE),
