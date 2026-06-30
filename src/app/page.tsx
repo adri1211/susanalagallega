@@ -20,14 +20,8 @@ export default async function HomePage() {
   let destacados: Awaited<ReturnType<typeof getDestacados>> = [];
   let blogPosts: Awaited<ReturnType<typeof getPublishedPosts>> = [];
 
-  try {
-    [destacados, blogPosts] = await Promise.all([
-      getDestacados(),
-      getPublishedPosts(3),
-    ]);
-  } catch {
-    // Supabase not configured
-  }
+  try { destacados = await getDestacados(); } catch {}
+  try { blogPosts = await getPublishedPosts(3); } catch {}
 
   return (
     <>

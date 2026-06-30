@@ -19,11 +19,8 @@ function BlogCard({ post }: { post: BlogPost }) {
   const fecha = new Date(post.created_at).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' });
 
   return (
-    <Link href={`/blog/${post.slug}`} style={{ textDecoration: 'none', display: 'block' }}>
-      <article style={{ background: 'white', borderRadius: '1.25rem', overflow: 'hidden', border: '1px solid rgba(36,59,96,0.07)', transition: 'transform 0.3s, box-shadow 0.3s', height: '100%', display: 'flex', flexDirection: 'column' }}
-        onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = 'translateY(-6px)'; (e.currentTarget as HTMLElement).style.boxShadow = '0 20px 48px rgba(36,59,96,0.13)'; }}
-        onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = ''; (e.currentTarget as HTMLElement).style.boxShadow = ''; }}
-      >
+    <Link href={`/blog/${post.slug}`} className="blog-card-link" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+      <article className="blog-card" style={{ background: 'white', borderRadius: '1.25rem', overflow: 'hidden', border: '1px solid rgba(36,59,96,0.07)', height: '100%', display: 'flex', flexDirection: 'column' }}>
         <div style={{ height: 180, background: `linear-gradient(135deg, ${color}22 0%, ${color}44 100%)`, position: 'relative', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           {post.imagen_portada
             ? <img src={post.imagen_portada} alt={post.titulo} style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', inset: 0 }} />
@@ -44,7 +41,7 @@ function BlogCard({ post }: { post: BlogPost }) {
             {post.titulo}
           </h2>
           {post.extracto && (
-            <p style={{ fontFamily: 'Poppins, sans-serif', fontSize: '0.85rem', color: '#6b7a8d', lineHeight: 1.65, margin: '0 0 1rem', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+            <p style={{ fontFamily: 'Poppins, sans-serif', fontSize: '0.85rem', color: '#6b7a8d', lineHeight: 1.65, margin: '0 0 1rem', overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>
               {post.extracto}
             </p>
           )}
@@ -64,13 +61,22 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
   try {
     posts = await getPublishedPosts();
   } catch {
-    // Supabase not configured
+    // tabla no existe todavía — esperar a ejecutar el SQL en Supabase
   }
 
   const filteredPosts = cat ? posts.filter(p => p.categoria === cat) : posts;
 
   return (
     <main style={{ background: '#F4F3E4', minHeight: '100vh' }}>
+      <style>{`
+        .blog-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .blog-card:hover { transform: translateY(-6px); box-shadow: 0 20px 48px rgba(36,59,96,0.13); }
+        .blog-grid-full { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+        @media(max-width: 900px) { .blog-grid-full { grid-template-columns: 1fr 1fr; } }
+        @media(max-width: 600px) { .blog-grid-full { grid-template-columns: 1fr; } }
+        .cat-btn { display: inline-flex; align-items: center; border-radius: 9999px; padding: 7px 18px; font-family: Poppins, sans-serif; font-weight: 700; font-size: 0.78rem; text-decoration: none; transition: all 0.2s; }
+      `}</style>
+
       {/* Hero */}
       <section style={{ background: '#1a2d4a', padding: '9rem 1.5rem 5rem', textAlign: 'center' }}>
         <p style={{ fontFamily: 'Poppins, sans-serif', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.22em', textTransform: 'uppercase', color: '#45b0e5', marginBottom: '0.75rem' }}>
@@ -80,21 +86,25 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
           Historias que se cuentan
         </h1>
         <p style={{ fontFamily: 'Poppins, sans-serif', color: 'rgba(199,231,244,0.7)', fontSize: '1rem', maxWidth: 520, margin: '0 auto' }}>
-          Gastronomía gallega, hostelería, prensa, television y todo lo que rodea a Susana La Gallega
+          Gastronomía gallega, hostelería, prensa, televisión y todo lo que rodea a Susana La Gallega
         </p>
       </section>
 
-      {/* Filtros de categoría */}
+      {/* Filtros */}
       <section style={{ background: 'white', borderBottom: '1px solid rgba(36,59,96,0.07)', padding: '1rem 1.5rem', overflowX: 'auto' }}>
         <div style={{ maxWidth: 1100, margin: '0 auto', display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
-          <Link href="/blog" style={{ display: 'inline-flex', alignItems: 'center', borderRadius: 9999, padding: '7px 18px', fontFamily: 'Poppins, sans-serif', fontWeight: 700, fontSize: '0.78rem', textDecoration: 'none', transition: 'all 0.2s', background: !cat ? '#1a2d4a' : 'transparent', color: !cat ? 'white' : '#6b7a8d', border: `2px solid ${!cat ? '#1a2d4a' : 'rgba(36,59,96,0.15)'}` }}>
-            Todos
+          <Link href="/blog" className="cat-btn" style={{ background: !cat ? '#1a2d4a' : 'transparent', color: !cat ? 'white' : '#6b7a8d', border: `2px solid ${!cat ? '#1a2d4a' : 'rgba(36,59,96,0.15)'}` }}>
+            Todos ({posts.length})
           </Link>
-          {CATEGORIAS_BLOG.map(c => (
-            <Link key={c.slug} href={`/blog?cat=${c.slug}`} style={{ display: 'inline-flex', alignItems: 'center', borderRadius: 9999, padding: '7px 18px', fontFamily: 'Poppins, sans-serif', fontWeight: 700, fontSize: '0.78rem', textDecoration: 'none', transition: 'all 0.2s', background: cat === c.slug ? c.color : 'transparent', color: cat === c.slug ? 'white' : '#6b7a8d', border: `2px solid ${cat === c.slug ? c.color : 'rgba(36,59,96,0.15)'}` }}>
-              {c.label}
-            </Link>
-          ))}
+          {CATEGORIAS_BLOG.map(c => {
+            const count = posts.filter(p => p.categoria === c.slug).length;
+            if (count === 0) return null;
+            return (
+              <Link key={c.slug} href={`/blog?cat=${c.slug}`} className="cat-btn" style={{ background: cat === c.slug ? c.color : 'transparent', color: cat === c.slug ? 'white' : '#6b7a8d', border: `2px solid ${cat === c.slug ? c.color : 'rgba(36,59,96,0.15)'}` }}>
+                {c.label} ({count})
+              </Link>
+            );
+          })}
         </div>
       </section>
 
@@ -102,19 +112,19 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
       <section style={{ maxWidth: 1100, margin: '0 auto', padding: '4rem 1.5rem' }}>
         {filteredPosts.length === 0 ? (
           <div style={{ textAlign: 'center', padding: '4rem 0' }}>
-            <p style={{ fontFamily: 'Poppins, sans-serif', color: '#6b7a8d', fontSize: '1rem' }}>No hay publicaciones aún en esta categoría.</p>
+            <p style={{ fontSize: '3rem', marginBottom: '1rem' }}>📝</p>
+            <p style={{ fontFamily: 'Poppins, sans-serif', color: '#6b7a8d', fontSize: '1rem' }}>
+              {posts.length === 0
+                ? 'El blog está en construcción. ¡Vuelve pronto!'
+                : 'No hay publicaciones en esta categoría.'}
+            </p>
           </div>
         ) : (
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem' }} className="blog-grid-full">
+          <div className="blog-grid-full">
             {filteredPosts.map(post => <BlogCard key={post.id} post={post} />)}
           </div>
         )}
       </section>
-
-      <style>{`
-        @media(max-width: 900px) { .blog-grid-full { grid-template-columns: 1fr 1fr !important; } }
-        @media(max-width: 600px) { .blog-grid-full { grid-template-columns: 1fr !important; } }
-      `}</style>
     </main>
   );
 }

@@ -19,10 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   try {
     const post = await getPostBySlug(slug);
     if (!post) return {};
-    return {
-      title: post.titulo,
-      description: post.extracto || undefined,
-    };
+    return { title: post.titulo, description: post.extracto || undefined };
   } catch {
     return {};
   }
@@ -42,7 +39,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   try {
     post = await getPostBySlug(slug);
   } catch {
-    // Supabase not configured
+    // DB error
   }
 
   if (!post) notFound();
@@ -52,7 +49,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
   return (
     <main style={{ background: '#F4F3E4', minHeight: '100vh' }}>
-      {/* Hero con imagen o degradado */}
+      <style>{`
+        .source-btn { display: inline-flex; align-items: center; gap: 8px; color: white; border-radius: 9999px; padding: 12px 24px; font-family: Poppins, sans-serif; font-weight: 700; font-size: 0.82rem; text-decoration: none; transition: filter 0.2s; background: ${color}; }
+        .source-btn:hover { filter: brightness(1.12); }
+      `}</style>
+
+      {/* Hero */}
       <section style={{ background: post.imagen_portada ? 'transparent' : '#1a2d4a', position: 'relative', overflow: 'hidden' }}>
         {post.imagen_portada && (
           <>
@@ -89,9 +91,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         )}
 
         {post.contenido && (
-          <div style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1rem', color: '#374151', lineHeight: 1.85 }}>
+          <div>
             {post.contenido.split('\n\n').map((paragraph, i) => (
-              <p key={i} style={{ marginBottom: '1.5rem' }}>{paragraph}</p>
+              <p key={i} style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1rem', color: '#374151', lineHeight: 1.85, marginBottom: '1.5rem' }}>
+                {paragraph}
+              </p>
             ))}
           </div>
         )}
@@ -118,17 +122,13 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 Publicado en {SOURCE_LABELS[post.fuente_tipo || 'web']}
               </p>
             </div>
-            <a href={post.fuente_url} target="_blank" rel="noopener noreferrer"
-              style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: color, color: 'white', borderRadius: 9999, padding: '12px 24px', fontFamily: 'Poppins, sans-serif', fontWeight: 700, fontSize: '0.82rem', textDecoration: 'none', transition: 'all 0.2s' }}
-              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.filter = 'brightness(1.1)'; }}
-              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.filter = ''; }}
-            >
+            <a href={post.fuente_url} target="_blank" rel="noopener noreferrer" className="source-btn">
               Ver en {SOURCE_LABELS[post.fuente_tipo || 'web']} →
             </a>
           </div>
         )}
 
-        {/* Volver al blog */}
+        {/* Volver */}
         <div style={{ marginTop: '3rem', paddingTop: '2rem', borderTop: '1px solid rgba(36,59,96,0.1)' }}>
           <Link href="/blog" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, color: '#45b0e5', fontFamily: 'Poppins, sans-serif', fontWeight: 700, fontSize: '0.85rem', textDecoration: 'none' }}>
             ← Volver al blog
