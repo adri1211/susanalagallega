@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import { getPostBySlug, getPublishedPosts, getCategoriaColor, getCategoriaLabel } from '@/lib/blog';
 import type { Metadata } from 'next';
 
-export const revalidate = 3600;
+export const dynamic = 'force-dynamic';
 
 export async function generateStaticParams() {
   try {
