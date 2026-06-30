@@ -5,13 +5,14 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import {
   LayoutDashboard, UtensilsCrossed, FileImage, Settings,
-  Menu, X, ExternalLink, ChevronRight
+  Menu, X, ExternalLink, ChevronRight, BookOpen
 } from 'lucide-react';
 import { cn } from '@/utils/cn';
 
 const LINKS = [
   { href: '/admin', label: 'Dashboard', icon: LayoutDashboard },
   { href: '/admin/restaurantes', label: 'Restaurantes', icon: UtensilsCrossed },
+  { href: '/admin/blog', label: 'Blog & Noticias', icon: BookOpen },
   { href: '/admin/media', label: 'Galería / Media', icon: FileImage },
   { href: '/admin/configuracion', label: 'Configuración', icon: Settings },
 ];

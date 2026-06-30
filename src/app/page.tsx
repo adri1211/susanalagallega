@@ -9,44 +9,40 @@ import { FeaturedSection } from '@/components/home/FeaturedSection';
 import { GodalbaSection } from '@/components/home/GodalbaSection';
 import { TestimoniosSection } from '@/components/home/TestimoniosSection';
 import { ColaboradoresSection } from '@/components/home/ColaboradoresSection';
+import { BlogPreviewSection } from '@/components/home/BlogPreviewSection';
 import { MapTeaser } from '@/components/home/MapTeaser';
 import { getDestacados } from '@/lib/data';
+import { getPublishedPosts } from '@/lib/blog';
 
 export const revalidate = 3600;
 
 export default async function HomePage() {
   let destacados: Awaited<ReturnType<typeof getDestacados>> = [];
+  let blogPosts: Awaited<ReturnType<typeof getPublishedPosts>> = [];
+
   try {
-    destacados = await getDestacados();
+    [destacados, blogPosts] = await Promise.all([
+      getDestacados(),
+      getPublishedPosts(3),
+    ]);
   } catch {
     // Supabase not configured
   }
 
   return (
     <>
-      {/* 1. Marca personal — hero inmersivo */}
       <HeroSection />
-      {/* 2. Marquee animado */}
       <MarqueeSection />
-      {/* 3. El programa TV */}
       <StorySection />
-      {/* 4. Sección cinematográfica — cita + parallax */}
       <CinematicSection />
-      {/* 5. Stats animados */}
       <StatsSection />
-      {/* 6. Medios */}
       <MediaSection />
-      {/* 7. Categorías inmersivas */}
       <CategoriesSection />
-      {/* 8. Restaurantes destacados */}
       <FeaturedSection restaurantes={destacados} />
-      {/* 9. Mar de Godalba + Hostal */}
       <GodalbaSection />
-      {/* 10. Testimonios */}
       <TestimoniosSection />
-      {/* 11. Colaboradores */}
       <ColaboradoresSection />
-      {/* 12. Guía descargable */}
+      <BlogPreviewSection posts={blogPosts} />
       <MapTeaser />
     </>
   );

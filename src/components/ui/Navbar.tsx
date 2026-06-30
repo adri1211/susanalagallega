@@ -9,6 +9,7 @@ import { Menu, X } from 'lucide-react';
 const NAV_LINKS = [
   { label: 'Saboreando con Susana', href: '/saboreando-con-susana' },
   { label: '¿Qué te apetece comer hoy?', href: '/restaurantes' },
+  { label: 'Blog', href: '/blog' },
   { label: 'Colaboraciones', href: '/colaboraciones' },
   { label: 'Contacto', href: '/contacto' },
 ];
