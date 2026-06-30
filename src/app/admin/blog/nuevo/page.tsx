@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowLeft, Save } from 'lucide-react';
 import { CATEGORIAS_BLOG } from '@/lib/blog';
+import { ImageUpload } from '@/components/admin/ImageUpload';
 
 function slugify(text: string) {
   return text.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -139,8 +140,7 @@ export default function NuevoPostPage() {
             <div className="bg-white rounded-2xl border border-black/5 p-5">
               <h3 style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 700, color: '#243b60', fontSize: '0.88rem', margin: '0 0 1rem' }}>Imagen</h3>
               <div style={{ marginBottom: '1rem' }}>
-                <label style={labelStyle}>URL de imagen de portada</label>
-                <input value={form.imagen_portada} onChange={e => set('imagen_portada', e.target.value)} style={inputStyle} placeholder="https://... o /images/..." />
+                <ImageUpload value={form.imagen_portada} onChange={url => set('imagen_portada', url)} />
               </div>
               <div>
                 <label style={labelStyle}>Etiquetas (separadas por coma)</label>

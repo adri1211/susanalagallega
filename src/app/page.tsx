@@ -29,6 +29,7 @@ export default async function HomePage() {
       <MarqueeSection />
       <StorySection />
       <CinematicSection />
+      <BlogPreviewSection posts={blogPosts} />
       <StatsSection />
       <MediaSection />
       <CategoriesSection />
@@ -36,7 +37,6 @@ export default async function HomePage() {
       <GodalbaSection />
       <TestimoniosSection />
       <ColaboradoresSection />
-      <BlogPreviewSection posts={blogPosts} />
       <MapTeaser />
     </>
   );
