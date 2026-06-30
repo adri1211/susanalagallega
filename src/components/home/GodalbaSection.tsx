@@ -123,7 +123,7 @@ export function GodalbaSection() {
               alt="Susana La Gallega con Mar de Godalba en el Salón Gourmet"
               fill
               unoptimized
-              style={{ objectFit: 'cover', objectPosition: 'center top' }}
+              style={{ objectFit: 'cover', objectPosition: 'center 30%' }}
             />
             <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(26,45,74,0.8) 0%, transparent 55%)' }} />
             <div style={{ position: 'absolute', bottom: 16, left: 18, right: 18 }}>
