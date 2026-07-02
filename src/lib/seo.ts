@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import type { Restaurant } from '@/types/restaurant';
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://susanalagallega.com';
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://saboreandoconsusanalagallega.com';
 const SITE_NAME = 'Susana La Gallega';
 const SITE_DESCRIPTION =
   'El directorio gastronómico de referencia en Galicia. Descubre marisquerías, pulperías, restaurantes tradicionales y los mejores lugares donde comer en Galicia.';

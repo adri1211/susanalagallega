@@ -18,7 +18,7 @@ const lilitaOne = Lilita_One({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://susanalagallega.com'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://saboreandoconsusanalagallega.com'),
   title: {
     default: 'Susana La Gallega | Guía Gastronómica de Galicia',
     template: '%s | Susana La Gallega',
