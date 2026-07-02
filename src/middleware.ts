@@ -31,8 +31,9 @@ export async function middleware(request: NextRequest) {
 
   const { data: { user } } = await supabase.auth.getUser();
 
-  // Auth pages: accessible without login (redirect to /admin if already logged in)
-  if (pathname === '/admin/login' || pathname === '/admin/register') {
+  // Auth pages y callback: accesibles sin sesión
+  if (pathname === '/admin/login' || pathname === '/admin/register' || pathname.startsWith('/auth/')) {
+    if (pathname.startsWith('/auth/')) return response; // callback no redirige aunque haya sesión
     if (user) return NextResponse.redirect(new URL('/admin', request.url));
     return response;
   }
@@ -46,5 +47,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/admin/:path*'],
+  matcher: ['/admin/:path*', '/auth/:path*'],
 };

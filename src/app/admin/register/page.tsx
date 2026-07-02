@@ -29,7 +29,12 @@ export default function AdminRegisterPage() {
 
     setLoading(true);
     const supabase = createSupabaseBrowserClient();
-    const { error } = await supabase.auth.signUp({ email, password });
+    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.saboreandoconsusanalagallega.com';
+    const { error } = await supabase.auth.signUp({
+      email,
+      password,
+      options: { emailRedirectTo: `${siteUrl}/auth/callback` },
+    });
 
     if (error) {
       setError(error.message === 'User already registered' ? 'Este email ya está registrado' : error.message);
