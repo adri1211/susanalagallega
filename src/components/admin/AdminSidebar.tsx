@@ -1,12 +1,12 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 import {
   LayoutDashboard, UtensilsCrossed, FileImage, Settings,
-  Menu, X, ExternalLink, ChevronRight, BookOpen, LogOut
+  Menu, X, ExternalLink, ChevronRight, BookOpen, LogOut, User
 } from 'lucide-react';
 import { cn } from '@/utils/cn';
 import { createSupabaseBrowserClient } from '@/lib/supabase/client';
@@ -23,6 +23,13 @@ export function AdminSidebar() {
   const pathname = usePathname();
   const router = useRouter();
   const [open, setOpen] = useState(false);
+  const [email, setEmail] = useState<string | null>(null);
+
+  useEffect(() => {
+    createSupabaseBrowserClient().auth.getUser().then(({ data }) => {
+      setEmail(data.user?.email ?? null);
+    });
+  }, []);
 
   async function handleLogout() {
     const supabase = createSupabaseBrowserClient();
@@ -100,7 +107,19 @@ export function AdminSidebar() {
 
         <Nav />
 
-        <div className="mt-auto flex flex-col gap-2 pt-4 border-t border-[#1a2d4a]/10">
+        <div className="mt-auto flex flex-col gap-3 pt-4 border-t border-[#1a2d4a]/10">
+          {/* Usuario logueado */}
+          {email && (
+            <div className="flex items-center gap-2.5 px-1">
+              <div className="w-7 h-7 rounded-full bg-[#1a2d4a] flex items-center justify-center flex-shrink-0">
+                <User size={13} className="text-white" />
+              </div>
+              <div className="min-w-0">
+                <p className="text-[10px] text-[#1a2d4a]/40 font-medium uppercase tracking-wider">Conectado como</p>
+                <p className="text-xs text-[#1a2d4a] font-semibold truncate">{email}</p>
+              </div>
+            </div>
+          )}
           <a
             href="/"
             target="_blank"
