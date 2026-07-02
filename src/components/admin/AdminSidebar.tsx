@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 import {
   LayoutDashboard, UtensilsCrossed, FileImage, Settings,
-  Menu, X, ExternalLink, ChevronRight, BookOpen, LogOut, User
+  Menu, X, ExternalLink, ChevronRight, BookOpen, LogOut, User, Users
 } from 'lucide-react';
 import { cn } from '@/utils/cn';
 import { createSupabaseBrowserClient } from '@/lib/supabase/client';
@@ -15,6 +15,7 @@ const LINKS = [
   { href: '/admin', label: 'Dashboard', icon: LayoutDashboard },
   { href: '/admin/restaurantes', label: 'Restaurantes', icon: UtensilsCrossed },
   { href: '/admin/blog', label: 'Blog & Noticias', icon: BookOpen },
+  { href: '/admin/clientes', label: 'Clientes', icon: Users },
   { href: '/admin/media', label: 'Galería / Media', icon: FileImage },
   { href: '/admin/configuracion', label: 'Configuración', icon: Settings },
 ];
