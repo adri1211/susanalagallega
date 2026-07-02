@@ -31,8 +31,8 @@ export async function middleware(request: NextRequest) {
 
   const { data: { user } } = await supabase.auth.getUser();
 
-  // Login page: redirect to admin dashboard if already authenticated
-  if (pathname === '/admin/login') {
+  // Auth pages: accessible without login (redirect to /admin if already logged in)
+  if (pathname === '/admin/login' || pathname === '/admin/register') {
     if (user) return NextResponse.redirect(new URL('/admin', request.url));
     return response;
   }

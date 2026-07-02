@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 import { createSupabaseBrowserClient } from '@/lib/supabase/client';
 
 export default function AdminRegisterPage() {
@@ -61,8 +62,8 @@ export default function AdminRegisterPage() {
     <div style={{ width: '100%', maxWidth: 420 }}>
       {/* Logo */}
       <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-        <div style={{ width: 56, height: 56, borderRadius: 16, background: '#45b0e5', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1rem', fontSize: '1.5rem', fontWeight: 700, color: 'white', fontFamily: 'var(--font-lilita), Lilita One, cursive' }}>
-          S
+        <div style={{ width: 80, height: 80, borderRadius: '50%', overflow: 'hidden', display: 'inline-block', marginBottom: '1rem', border: '3px solid rgba(69,176,229,0.5)', boxShadow: '0 8px 32px rgba(0,0,0,0.3)' }}>
+          <Image src="/images/original_32874.png" alt="Susana La Gallega" width={80} height={80} style={{ objectFit: 'cover', objectPosition: 'center top', width: '100%', height: '100%' }} unoptimized />
         </div>
         <h1 style={{ color: 'white', fontFamily: 'var(--font-lilita), Lilita One, cursive', fontSize: '1.6rem', margin: 0, marginBottom: 6 }}>
           Susana La Gallega
