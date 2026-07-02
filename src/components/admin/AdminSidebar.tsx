@@ -2,12 +2,13 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import {
   LayoutDashboard, UtensilsCrossed, FileImage, Settings,
-  Menu, X, ExternalLink, ChevronRight, BookOpen
+  Menu, X, ExternalLink, ChevronRight, BookOpen, LogOut
 } from 'lucide-react';
 import { cn } from '@/utils/cn';
+import { createSupabaseBrowserClient } from '@/lib/supabase/client';
 
 const LINKS = [
   { href: '/admin', label: 'Dashboard', icon: LayoutDashboard },
@@ -19,7 +20,15 @@ const LINKS = [
 
 export function AdminSidebar() {
   const pathname = usePathname();
+  const router = useRouter();
   const [open, setOpen] = useState(false);
+
+  async function handleLogout() {
+    const supabase = createSupabaseBrowserClient();
+    await supabase.auth.signOut();
+    router.push('/admin/login');
+    router.refresh();
+  }
 
   const Nav = () => (
     <nav className="flex flex-col gap-1 mt-2">
@@ -83,7 +92,7 @@ export function AdminSidebar() {
 
         <Nav />
 
-        <div className="mt-auto">
+        <div className="mt-auto flex flex-col gap-2">
           <a
             href="/"
             target="_blank"
@@ -92,6 +101,13 @@ export function AdminSidebar() {
             <ExternalLink size={13} />
             Ver web pública
           </a>
+          <button
+            onClick={handleLogout}
+            className="flex items-center gap-2 text-xs text-red-400/70 hover:text-red-500 transition-colors w-full text-left"
+          >
+            <LogOut size={13} />
+            Cerrar sesión
+          </button>
         </div>
       </aside>
     </>

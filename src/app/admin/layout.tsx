@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { headers } from 'next/headers';
 import { AdminSidebar } from '@/components/admin/AdminSidebar';
 
 export const metadata: Metadata = {
@@ -6,7 +7,19 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-export default function AdminLayout({ children }: { children: React.ReactNode }) {
+export default async function AdminLayout({ children }: { children: React.ReactNode }) {
+  const headersList = await headers();
+  const pathname = headersList.get('x-pathname') || '';
+  const isAuthPage = pathname === '/admin/login' || pathname === '/admin/register';
+
+  if (isAuthPage) {
+    return (
+      <div style={{ minHeight: '100vh', background: '#1a2d4a', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '1.5rem' }}>
+        {children}
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-[#F5F5F3] flex">
       <AdminSidebar />
