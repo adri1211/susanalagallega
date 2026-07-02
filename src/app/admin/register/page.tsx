@@ -62,12 +62,7 @@ export default function AdminRegisterPage() {
     <div style={{ width: '100%', maxWidth: 420 }}>
       {/* Logo */}
       <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-        <div style={{ width: 80, height: 80, borderRadius: '50%', overflow: 'hidden', display: 'inline-block', marginBottom: '1rem', border: '3px solid rgba(69,176,229,0.5)', boxShadow: '0 8px 32px rgba(0,0,0,0.3)' }}>
-          <Image src="/images/original_32874.png" alt="Susana La Gallega" width={80} height={80} style={{ objectFit: 'cover', objectPosition: 'center top', width: '100%', height: '100%' }} unoptimized />
-        </div>
-        <h1 style={{ color: 'white', fontFamily: 'var(--font-lilita), Lilita One, cursive', fontSize: '1.6rem', margin: 0, marginBottom: 6 }}>
-          Susana La Gallega
-        </h1>
+        <Image src="/images/original_32849.svg" alt="Susana La Gallega" width={180} height={70} unoptimized style={{ height: 70, width: 'auto', marginBottom: '1rem', filter: 'brightness(0) invert(1)' }} />
         <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.85rem', margin: 0, fontFamily: 'Poppins, sans-serif' }}>
           Panel de administración
         </p>
