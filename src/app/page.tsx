@@ -11,6 +11,7 @@ import { TestimoniosSection } from '@/components/home/TestimoniosSection';
 import { ColaboradoresSection } from '@/components/home/ColaboradoresSection';
 import { BlogPreviewSection } from '@/components/home/BlogPreviewSection';
 import { MapTeaser } from '@/components/home/MapTeaser';
+import { GuiaSection } from '@/components/home/GuiaSection';
 import { getDestacados } from '@/lib/data';
 import { getPublishedPosts } from '@/lib/blog';
 
@@ -29,6 +30,7 @@ export default async function HomePage() {
       <MarqueeSection />
       <StorySection />
       <CinematicSection />
+      <GuiaSection />
       <BlogPreviewSection posts={blogPosts} />
       <StatsSection />
       <MediaSection />
