@@ -48,21 +48,21 @@ export function GuiaSection() {
             rel="noopener noreferrer"
             style={{ display: 'block', textDecoration: 'none', position: 'relative' }}
           >
-            <div style={{ width: 260, background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: '1.5rem', padding: '2.5rem 2rem', textAlign: 'center', backdropFilter: 'blur(10px)', transition: 'transform 0.3s', cursor: 'pointer', boxShadow: '0 32px 80px rgba(0,0,0,0.3)' }}>
-              <div style={{ fontSize: '5rem', marginBottom: '1.25rem', lineHeight: 1 }}>📕</div>
-              <h3 style={{ fontFamily: 'var(--font-lilita), Lilita One, cursive', color: 'white', fontSize: '1.2rem', margin: '0 0 0.5rem' }}>
-                Guía de Sabores
-              </h3>
-              <p style={{ color: '#45b0e5', fontFamily: 'Poppins, sans-serif', fontSize: '0.8rem', fontWeight: 600, margin: '0 0 1.5rem' }}>
-                Susana La Gallega
-              </p>
-              <div style={{ background: '#45b0e5', color: 'white', borderRadius: 999, padding: '8px 20px', fontSize: '0.82rem', fontWeight: 700, fontFamily: 'Poppins, sans-serif', display: 'inline-block' }}>
-                Descargar PDF
-              </div>
+            {/* Portada PDF */}
+            <div style={{ width: 240, height: 340, borderRadius: '1rem', overflow: 'hidden', boxShadow: '0 32px 80px rgba(0,0,0,0.5)', border: '1px solid rgba(255,255,255,0.1)' }}>
+              <iframe
+                src="/guia-de-sabores.pdf#page=1&toolbar=0&navpanes=0&scrollbar=0&view=FitH"
+                style={{ width: '100%', height: '100%', border: 'none', pointerEvents: 'none' }}
+                title="Guía de Sabores portada"
+              />
             </div>
             {/* Badge */}
             <div style={{ position: 'absolute', top: -12, right: -12, background: '#F4F3E4', color: '#1a2d4a', borderRadius: 999, padding: '4px 14px', fontSize: '0.72rem', fontWeight: 700, fontFamily: 'Poppins, sans-serif', boxShadow: '0 4px 12px rgba(0,0,0,0.2)' }}>
               ¡GRATIS!
+            </div>
+            {/* Botón overlay */}
+            <div style={{ position: 'absolute', bottom: -16, left: '50%', transform: 'translateX(-50%)', background: '#45b0e5', color: 'white', borderRadius: 999, padding: '8px 24px', fontSize: '0.82rem', fontWeight: 700, fontFamily: 'Poppins, sans-serif', whiteSpace: 'nowrap', boxShadow: '0 8px 24px rgba(69,176,229,0.4)' }}>
+              📥 Descargar PDF
             </div>
           </a>
         </div>
