@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export function GuiaSection() {
   return (
@@ -16,10 +17,10 @@ export function GuiaSection() {
           </span>
           <h2 style={{ fontFamily: 'var(--font-lilita), Lilita One, cursive', color: 'white', fontSize: 'clamp(2rem, 4vw, 3rem)', lineHeight: 1.1, margin: '0 0 1.25rem' }}>
             Guía de Sabores<br />
-            <span style={{ color: '#45b0e5' }}>de Susana La Gallega</span>
+            <span style={{ color: '#45b0e5' }}>de Ferrolterra y Ortegal</span>
           </h2>
           <p style={{ color: 'rgba(255,255,255,0.65)', fontFamily: 'Poppins, sans-serif', fontSize: '1rem', lineHeight: 1.75, margin: '0 0 2rem' }}>
-            Todo lo que necesitas saber para descubrir y disfrutar la gastronomía gallega. Restaurantes, productos, tradiciones y los secretos que Susana ha recopilado para ti.
+            Tu guía de eventos, ferias y fiestas de la comarca. Descubre los mejores restaurantes, productos y tradiciones gastronómicas de Ferrolterra y Ortegal.
           </p>
 
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
@@ -49,11 +50,14 @@ export function GuiaSection() {
             style={{ display: 'block', textDecoration: 'none', position: 'relative' }}
           >
             {/* Portada PDF */}
-            <div style={{ width: 240, height: 340, borderRadius: '1rem', overflow: 'hidden', boxShadow: '0 32px 80px rgba(0,0,0,0.5)', border: '1px solid rgba(255,255,255,0.1)' }}>
-              <iframe
-                src="/guia-de-sabores.pdf#page=1&toolbar=0&navpanes=0&scrollbar=0&view=FitH"
-                style={{ width: '100%', height: '100%', border: 'none', pointerEvents: 'none' }}
-                title="Guía de Sabores portada"
+            <div style={{ width: 240, borderRadius: '1rem', overflow: 'hidden', boxShadow: '0 32px 80px rgba(0,0,0,0.5)', border: '1px solid rgba(255,255,255,0.1)' }}>
+              <Image
+                src="/images/guia-portada-crop.jpg"
+                alt="Guía de Sabores de Ferrolterra y Ortegal"
+                width={490}
+                height={500}
+                style={{ width: '100%', height: 'auto', display: 'block' }}
+                unoptimized
               />
             </div>
             {/* Badge */}

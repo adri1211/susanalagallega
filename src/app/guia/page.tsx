@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Guía de Sabores | Susana La Gallega',
-  description: 'Descarga la Guía de Sabores de Susana La Gallega — tu referencia gastronómica para descubrir lo mejor de la cocina gallega.',
+  title: 'Guía de Sabores de Ferrolterra y Ortegal | Susana La Gallega',
+  description: 'Descarga la Guía de Sabores de Ferrolterra y Ortegal — eventos, ferias y fiestas de mayo y junio 2026.',
 };
 
 export default function GuiaPage() {
@@ -17,10 +17,10 @@ export default function GuiaPage() {
             📖 Descarga gratuita
           </span>
           <h1 style={{ fontFamily: 'var(--font-lilita), Lilita One, cursive', color: 'white', fontSize: 'clamp(2.2rem, 5vw, 3.5rem)', lineHeight: 1.1, margin: '0 0 1.25rem' }}>
-            Guía de Sabores
+            Guía de Sabores de<br />Ferrolterra y Ortegal
           </h1>
           <p style={{ color: 'rgba(255,255,255,0.7)', fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(1rem, 2vw, 1.2rem)', lineHeight: 1.7, margin: '0 0 2.5rem' }}>
-            Tu referencia gastronómica para descubrir lo mejor de la cocina gallega, de la mano de Susana La Gallega.
+            Eventos, ferias y fiestas de mayo y junio 2026. Todo lo que necesitas para disfrutar la comarca de la mano de Susana La Gallega.
           </p>
           <a
             href="/guia-de-sabores.pdf"
