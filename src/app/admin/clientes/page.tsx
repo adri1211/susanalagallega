@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Plus, Phone, Mail, MapPin, Building2 } from 'lucide-react';
 import { adminGetClientes, getEstado, ESTADOS } from '@/lib/clientes';
+import { NotasPanel } from '@/components/admin/NotasPanel';
 
 export const dynamic = 'force-dynamic';
 
@@ -23,14 +24,17 @@ export default async function AdminClientesPage() {
             {clientes.length} contactos en total
           </p>
         </div>
-        <Link
-          href="/admin/clientes/nuevo"
-          className="flex items-center gap-2 text-white px-4 py-2.5 rounded-xl text-sm font-semibold transition-colors"
-          style={{ background: '#1a2d4a' }}
-        >
-          <Plus size={16} />
-          Nuevo cliente
-        </Link>
+        <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
+          <NotasPanel />
+          <Link
+            href="/admin/clientes/nuevo"
+            className="flex items-center gap-2 text-white px-4 py-2.5 rounded-xl text-sm font-semibold transition-colors"
+            style={{ background: '#1a2d4a' }}
+          >
+            <Plus size={16} />
+            Nuevo cliente
+          </Link>
+        </div>
       </div>
 
       {/* Resumen por estado */}
