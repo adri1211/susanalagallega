@@ -64,7 +64,7 @@ export function NotasPanel() {
             value={texto}
             onChange={e => handleChange(e.target.value)}
             placeholder="Pega aquí notas, textos, recordatorios... Se guarda automáticamente."
-            style={{ width: '100%', minHeight: 180, border: '1px solid rgba(26,45,74,0.1)', borderRadius: 8, padding: '0.75rem', fontSize: '0.88rem', fontFamily: 'Poppins, sans-serif', color: '#1a2d4a', resize: 'vertical', outline: 'none', boxSizing: 'border-box', lineHeight: 1.6 }}
+            style={{ width: '100%', minHeight: 400, border: '1px solid rgba(26,45,74,0.1)', borderRadius: 8, padding: '1rem', fontSize: '0.95rem', fontFamily: 'Poppins, sans-serif', color: '#1a2d4a', resize: 'vertical', outline: 'none', boxSizing: 'border-box', lineHeight: 1.8 }}
           />
         </div>
       )}
